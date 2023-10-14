@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //hellop000
+        //hellop0000
         super.onCreate(savedInstanceState);
         //这是用布局实现
         setContentView(R.layout.activity_main);
