@@ -9,11 +9,16 @@ color teal_700
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-id text_vciew_hellow_world
+id button_change_text
+id text_vciew_JNU
+id text_vciew_hello
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round
+string JNU
 string app_name
+string change_text
+string hello
 string hello_android
 string hello_world
 style Theme.MyFirstApplication

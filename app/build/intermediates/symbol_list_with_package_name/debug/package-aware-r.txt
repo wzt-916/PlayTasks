@@ -2902,6 +2902,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id button_change_text
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3250,7 +3251,8 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_vciew_hellow_world
+id text_vciew_JNU
+id text_vciew_hello
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3483,6 +3485,7 @@ layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string JNU
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3519,6 +3522,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string change_text
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3528,6 +3532,7 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello
 string hello_android
 string hello_world
 string hide_bottom_view_on_scroll_behavior
