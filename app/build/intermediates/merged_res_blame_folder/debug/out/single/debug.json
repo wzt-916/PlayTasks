@@ -24,10 +24,6 @@
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.jnu.student.app-merged_res-28:/layout_activity_main.xml.flat",
-        "source": "com.jnu.student.app-main-30:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\activity_main.xml"
     },
@@ -56,12 +52,28 @@
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_shop_item_row.xml.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\shop_item_row.xml"
+    },
+    {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.jnu.student.app-merged_res-28:/drawable_book_2.jpg.flat",
+        "source": "com.jnu.student.app-main-30:/drawable/book_2.jpg"
+    },
+    {
+        "merged": "com.jnu.student.app-merged_res-28:/drawable_book_no_name.jpg.flat",
+        "source": "com.jnu.student.app-main-30:/drawable/book_no_name.jpg"
+    },
+    {
+        "merged": "com.jnu.student.app-merged_res-28:/drawable_book_1.jpg.flat",
+        "source": "com.jnu.student.app-main-30:/drawable/book_1.jpg"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\drawable_ic_launcher_background.xml.flat",

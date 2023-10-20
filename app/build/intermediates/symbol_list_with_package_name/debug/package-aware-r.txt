@@ -2702,6 +2702,9 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable book_1
+drawable book_2
+drawable book_no_name
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2902,7 +2905,6 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
-id button_change_text
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3021,6 +3023,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageview_item
 id immediateStop
 id included
 id indeterminate
@@ -3145,6 +3148,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerview_main
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3251,14 +3255,14 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_vciew_JNU
-id text_vciew_hello
 id textinput_counter
 id textinput_error
 id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textview_item_name
+id textview_item_price
 id time
 id title
 id titleDividerNoCustom
@@ -3481,6 +3485,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout shop_item_row
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -3645,6 +3650,8 @@ string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string string_item_name
+string string_item_price
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
