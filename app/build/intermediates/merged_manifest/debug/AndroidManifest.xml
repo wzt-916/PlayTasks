@@ -28,6 +28,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.MyFirstApplication" >
         <activity
+            android:name="com.jnu.student.BookDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name="com.jnu.student.MainActivity"
             android:exported="true" >
             <intent-filter>

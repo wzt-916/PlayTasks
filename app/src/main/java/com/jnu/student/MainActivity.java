@@ -1,9 +1,13 @@
 package com.jnu.student;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.ContextMenu;
@@ -17,12 +21,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jnu.student.data.ShopItem;
+import com.jnu.student.data.Book;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+    ShopItemAdapter shopItemAdapter ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,105 +37,44 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView mainRecyclerView = findViewById(R.id.recyclerview_main);
         mainRecyclerView.setLayoutManager(new LinearLayoutManager(this));//设置布局管理器
 
-        ArrayList<ShopItem> shopItems = new ArrayList<ShopItem>();
-        for(int i = 0; i < 20; i++)
-        {
-            shopItems.add(new ShopItem("信息数学安全基础"+i,1.5,R.drawable.book_1));
-            shopItems.add(new ShopItem("软件项目管理案例开发"+i,2.5,R.drawable.book_2));
-            shopItems.add(new ShopItem("没有名字"+i,3.5,R.drawable.book_no_name));
-        }
-        ShopItemAdapter shopItemAdapter = new ShopItemAdapter(shopItems);
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("信息安全数学基础（第2版）",R.drawable.book_1));
+        books.add(new Book("软件项目管理案例教程（第4版）",R.drawable.book_2));
+        books.add(new Book("创新工程实践",R.drawable.book_no_name));
+        //ShopItemAdapter shopItemAdapter = new ShopItemAdapter(books);
+        shopItemAdapter = new ShopItemAdapter(books);
         mainRecyclerView.setAdapter(shopItemAdapter);
 
         registerForContextMenu(mainRecyclerView);//注册菜单
 
-        //通过TextView的id获取TextView对象：
-        /*TextView textView = findViewById(R.id.text_vciew_hello);
-        int stringId = getResources().getIdentifier("hello_android", "string", getPackageName());
-        if (stringId != 0) {
-            String string = getString(stringId);
-            textView.setText(string);
-        }*/
-        /*TextView textView_hello = findViewById(R.id.text_vciew_hello);
-        int stringId_hello = getResources().getIdentifier("hello","string",getPackageName());
-        String hello = getString(stringId_hello);
-        textView_hello.setText(hello);
 
-        TextView textView_JNU = findViewById(R.id.text_vciew_JNU);
-        int stringId_JNU = getResources().getIdentifier("JNU","string",getPackageName());
-        String string_JNU = getString(stringId_JNU);
-        textView_JNU.setText(string_JNU);
+        addItemLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        Intent data = result.getData();
+                        String title = data.getStringExtra("title");
+                        int randomDrawable = getRandomDrawableResource();
+                        books.add(new Book(title,randomDrawable));
+                        shopItemAdapter.notifyItemInserted(books.size());
+                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
 
-        Button button_change_text = (Button) findViewById(R.id.button_change_text);
-        int stringId_change_text = getResources().getIdentifier("change_text","string",getPackageName());
-        String string_change_text = getString(stringId_change_text);
-        button_change_text.setText(string_change_text);
-
-        Button button = findViewById(R.id.button_change_text);
-        button.setOnClickListener(v -> {
-            // do something...
-            String temp = textView_JNU.getText().toString();
-            textView_JNU.setText(textView_hello.getText().toString());
-            textView_hello.setText(temp);
-
-            Toast.makeText(MainActivity.this,"交换成功1",Toast.LENGTH_SHORT).show();
-        });
-
-        //交换文本
-        button_change_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String temp = textView_JNU.getText().toString();
-                textView_JNU.setText(textView_hello.getText().toString());
-                textView_hello.setText(temp);
-
-                //展示Toast
-                Toast.makeText(MainActivity.this,"交换成功",Toast.LENGTH_SHORT).show();
-
-                //展示AlertDialog
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("信息")
-                        .setMessage("交换成功")
-                        .setPositiveButton("确定",null)
-                        .show();
-            }
-        });
-        //String text = textView.getText().toString();
-        //获取字符串资源
-        /*String stringName = "hello_world";
-        int stringId = getResources().getIdentifier(stringName, "string", getPackageName());
-        if (stringId != 0) {
-            String string = getString(stringId);
-        }
-        //获取图片资源
-        String drawableName = "my_image";
-        int drawableId = getResources().getIdentifier(drawableName, "drawable", getPackageName());
-        if (drawableId != 0) {
-            Drawable drawable = getResources().getDrawable(drawableId, null);
-        }
-
-        //这是用Java代码实现在屏幕输出文字
-        // 创建一个RelativeLayout对象
-         RelativeLayout myLayout = new RelativeLayout(this);
-        //myLayout.setBackgroundColor(Color.YELLOW);        //背景颜色
-        // 创建一个TextView对象
-        TextView myTextView = new TextView(this);
-        //通过ID获取字符串资源
-        myTextView.setText("text");
-        myTextView.setTextSize(24);
-        myTextView.setGravity(Gravity.CENTER);       //居中对其
-
-        // 创建LayoutParams对象并设置宽度和高度
-        RelativeLayout.LayoutParams textViewParams =
-                new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.MATCH_PARENT,
-                        RelativeLayout.LayoutParams.MATCH_PARENT);
-
-        // 将TextView对象添加到RelativeLayout对象中
-        myLayout.addView(myTextView, textViewParams);
-        // 设置布局
-        setContentView(myLayout);*/
+                    }
+                }
+        );
     }
+    //随机选择三张图片的某一张
+    private int getRandomDrawableResource() {
+        // Define an array of drawable resources
+        int[] drawableResources = {R.drawable.book_no_name, R.drawable.book_1, R.drawable.book_2};
+
+        // Generate a random index
+        int randomIndex = new Random().nextInt(drawableResources.length);
+
+        // Return the selected drawable resource
+        return drawableResources[randomIndex];
+    }
+    ActivityResultLauncher<Intent> addItemLauncher;
     //点击响应
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -139,9 +83,13 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this,"clicked",Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
             case 0:
+                Toast.makeText(this,"添加"+item.getOrder(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, BookDetailsActivity.class);
+                addItemLauncher.launch(intent);
                 // Do something for item 1
                 break;
             case 1:
+                shopItemAdapter.removeItem();
                 // Do something for item 2
                 break;
             case 2:
@@ -154,61 +102,62 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class ShopItemAdapter extends RecyclerView.Adapter<ShopItemAdapter.ViewHolder> {
-        private ArrayList<ShopItem> shopItemArrayList;
+        private ArrayList<Book> bookArrayList;
 
-        public ShopItemAdapter(ArrayList<ShopItem> shopItems) {
-            shopItemArrayList = shopItems;
+        //定义删除的变量：
+        int position;
+        public ShopItemAdapter(ArrayList<Book> books) {
+            bookArrayList = books;
         }
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             View view = LayoutInflater.from(viewGroup.getContext())
-                    .inflate(R.layout.shop_item_row, viewGroup, false);
+                    .inflate(R.layout.book_item_row, viewGroup, false);
             return new ViewHolder(view);
         }
 
         @Override
         public void onBindViewHolder(ViewHolder viewHolder, int position) {
-            viewHolder.getTextViewName().setText(shopItemArrayList.get(position).getName());
-            viewHolder.getTextViewPrice().setText(shopItemArrayList.get(position).getPrice()+"");
-            viewHolder.getIamgeViewItem().setImageResource(shopItemArrayList.get(position).getImageResourceId());
+            viewHolder.getTextViewBookTitle().setText(bookArrayList.get(position).getTitle());
+            viewHolder.getIamgeViewItem().setImageResource(bookArrayList.get(position).getImageResourceId());
         }
 
         @Override
         public int getItemCount() {
-            return shopItemArrayList.size();
+            return bookArrayList.size();
+        }
+        //实现删除功能
+        public void removeItem() {
+            bookArrayList.remove(position);
+            notifyItemRemoved(position);
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
-            private final TextView textViewName;
-            private final TextView textViewPrice;
+            private final TextView textViewBookTitle;
             private final ImageView iamgeViewItem;
 
             //显示菜单
             public void onCreateContextMenu(ContextMenu menu, View v,
                                             ContextMenu.ContextMenuInfo menuInfo){
                 menu.setHeaderTitle("具体操作");
+                position = this.getAdapterPosition();
                 menu.add(0,0, Menu.NONE,"添加");
-                menu.add(0,0, Menu.NONE,"删除");
-                menu.add(0,0, Menu.NONE,"修改");
+                menu.add(0,1, Menu.NONE,"删除");
+                menu.add(0,2, Menu.NONE,"修改");
             }
-
             public ViewHolder(View shopItemView) {
                 super(shopItemView);
 
-                textViewName = shopItemView.findViewById(R.id.textview_item_name);
-                textViewPrice = shopItemView.findViewById(R.id.textview_item_price);
-                iamgeViewItem = shopItemView.findViewById(R.id.imageview_item);
+                textViewBookTitle = shopItemView.findViewById(R.id.text_view_book_title);
+                iamgeViewItem = shopItemView.findViewById(R.id.image_view_book_cover);
                 shopItemView.setOnCreateContextMenuListener(this);
             }
             public ImageView getIamgeViewItem() {
                 return iamgeViewItem;
             }
-            public TextView getTextViewName() {
-                return textViewName;
-            }
-            public TextView getTextViewPrice() {
-                return textViewPrice;
+            public TextView getTextViewBookTitle() {
+                return textViewBookTitle;
             }
         }
     }

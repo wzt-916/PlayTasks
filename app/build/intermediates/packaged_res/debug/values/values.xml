@@ -13,8 +13,8 @@
     <string name="hello">hello</string>
     <string name="hello_android">你好, Android</string>
     <string name="hello_world">Hello world</string>
-    <string name="string_item_name">item name</string>
-    <string name="string_item_price">item price</string>
+    <string name="string_book">书本名字:</string>
+    <string name="string_ok">ok</string>
     <style name="Theme.MyFirstApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>
