@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -22,12 +24,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jnu.student.data.Book;
+import com.jnu.student.data.DataBank;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    ShopItemAdapter shopItemAdapter ;
+    BooksAdapter booksAdapter;
+    ArrayList<Book> books;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +41,21 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView mainRecyclerView = findViewById(R.id.recyclerview_main);
         mainRecyclerView.setLayoutManager(new LinearLayoutManager(this));//设置布局管理器
 
-        ArrayList<Book> books = new ArrayList<Book>();
-        books.add(new Book("信息安全数学基础（第2版）",R.drawable.book_1));
-        books.add(new Book("软件项目管理案例教程（第4版）",R.drawable.book_2));
-        books.add(new Book("创新工程实践",R.drawable.book_no_name));
-        //ShopItemAdapter shopItemAdapter = new ShopItemAdapter(books);
-        shopItemAdapter = new ShopItemAdapter(books);
-        mainRecyclerView.setAdapter(shopItemAdapter);
+        //books = new ArrayList<Book>();
+        books = new DataBank().LoadBook(this.getApplicationContext());
 
-        registerForContextMenu(mainRecyclerView);//注册菜单
+        //如果初始为空，加三条基础数据
+        if(books.size() == 0)
+        {
+            books.add(new Book("信息安全数学基础（第2版）",R.drawable.book_1));
+            books.add(new Book("软件项目管理案例教程（第4版）",R.drawable.book_2));
+            books.add(new Book("创新工程实践",R.drawable.book_no_name));
+        }
+        //ShopItemAdapter shopItemAdapter = new ShopItemAdapter(books);
+        booksAdapter = new BooksAdapter(books);
+        mainRecyclerView.setAdapter(booksAdapter);
+
+        registerForContextMenu(mainRecyclerView);//注册上下文菜单
 
 
         addItemLauncher = registerForActivityResult(
@@ -56,7 +66,28 @@ public class MainActivity extends AppCompatActivity {
                         String title = data.getStringExtra("title");
                         int randomDrawable = getRandomDrawableResource();
                         books.add(new Book(title,randomDrawable));
-                        shopItemAdapter.notifyItemInserted(books.size());
+                        booksAdapter.notifyItemInserted(books.size());
+                        //保存数据
+                        new DataBank().SaveBooks(this.getApplicationContext(),books);
+                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
+
+                    }
+                }
+        );
+        UpdateItemLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        Intent data = result.getData();
+                        String title = data.getStringExtra("title");
+                        int position = data.getIntExtra("position",0);
+                        int randomDrawable = getRandomDrawableResource();
+                        Book book = books.get(position);
+                        book.setTitle(title);
+                        book.setDrawable(randomDrawable);
+                        booksAdapter.notifyItemChanged(position);
+                        //保存数据
+                        new DataBank().SaveBooks(this.getApplicationContext(),books);
                     } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
 
                     }
@@ -75,12 +106,10 @@ public class MainActivity extends AppCompatActivity {
         return drawableResources[randomIndex];
     }
     ActivityResultLauncher<Intent> addItemLauncher;
+    ActivityResultLauncher<Intent> UpdateItemLauncher;
     //点击响应
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item
-                .getMenuInfo();
-        Toast.makeText(this,"clicked",Toast.LENGTH_SHORT).show();
         switch (item.getItemId()) {
             case 0:
                 Toast.makeText(this,"添加"+item.getOrder(),Toast.LENGTH_SHORT).show();
@@ -89,10 +118,32 @@ public class MainActivity extends AppCompatActivity {
                 // Do something for item 1
                 break;
             case 1:
-                shopItemAdapter.removeItem();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Delete Data");
+                builder.setMessage("Are you sure you want to delete this data?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        books.remove(item.getOrder());
+                        booksAdapter.notifyItemRemoved(item.getOrder());
+                        new DataBank().SaveBooks(MainActivity.this,books);
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.create().show();
                 // Do something for item 2
                 break;
             case 2:
+                Intent intentUpdate = new Intent(MainActivity.this, BookDetailsActivity.class);
+                Book mybook = books.get(item.getOrder());
+                intentUpdate.putExtra("title",mybook.getTitle());
+                intentUpdate.putExtra("position",item.getOrder());
+                UpdateItemLauncher.launch(intentUpdate);
                 // Do something for item 3
                 break;
             default:
@@ -101,12 +152,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public class ShopItemAdapter extends RecyclerView.Adapter<ShopItemAdapter.ViewHolder> {
+    public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> {
         private ArrayList<Book> bookArrayList;
 
         //定义删除的变量：
         int position;
-        public ShopItemAdapter(ArrayList<Book> books) {
+        public BooksAdapter(ArrayList<Book> books) {
             bookArrayList = books;
         }
 
@@ -127,11 +178,6 @@ public class MainActivity extends AppCompatActivity {
         public int getItemCount() {
             return bookArrayList.size();
         }
-        //实现删除功能
-        public void removeItem() {
-            bookArrayList.remove(position);
-            notifyItemRemoved(position);
-        }
 
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
             private final TextView textViewBookTitle;
@@ -142,9 +188,9 @@ public class MainActivity extends AppCompatActivity {
                                             ContextMenu.ContextMenuInfo menuInfo){
                 menu.setHeaderTitle("具体操作");
                 position = this.getAdapterPosition();
-                menu.add(0,0, Menu.NONE,"添加");
-                menu.add(0,1, Menu.NONE,"删除");
-                menu.add(0,2, Menu.NONE,"修改");
+                menu.add(0,0, this.getAdapterPosition(),"添加");
+                menu.add(0,1, this.getAdapterPosition(),"删除");
+                menu.add(0,2, this.getAdapterPosition(),"修改");
             }
             public ViewHolder(View shopItemView) {
                 super(shopItemView);
