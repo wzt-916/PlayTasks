@@ -16,6 +16,7 @@ id baidu_web_view
 id button_item_details_ok
 id edittext_book_name
 id image_view_book_cover
+id mapView
 id recyclerview_main
 id tab_layout
 id text_view_book_title
