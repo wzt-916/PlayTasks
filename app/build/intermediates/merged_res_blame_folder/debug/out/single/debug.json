@@ -1,7 +1,7 @@
 [
     {
-        "merged": "com.jnu.student.app-merged_res-28:/layout_activity_book_details.xml.flat",
-        "source": "com.jnu.student.app-main-30:/layout/activity_book_details.xml"
+        "merged": "com.jnu.student.app-merged_res-28:/layout_fragment_web_view.xml.flat",
+        "source": "com.jnu.student.app-main-30:/layout/fragment_web_view.xml"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\drawable_book_no_name.jpg.flat",
@@ -32,12 +32,16 @@
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\shop_item_row.xml"
     },
     {
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_fragment_book_list.xml.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\fragment_book_list.xml"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -68,16 +72,20 @@
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_fragment_web_view.xml.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\fragment_web_view.xml"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_book_item_row.xml.flat",
@@ -86,6 +94,10 @@
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_fragment_baidu_map.xml.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\fragment_baidu_map.xml"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_activity_book_details.xml.flat",

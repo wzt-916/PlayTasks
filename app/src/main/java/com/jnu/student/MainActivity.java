@@ -1,45 +1,41 @@
 package com.jnu.student;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 
-import android.view.ContextMenu;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+import com.jnu.student.Fragment.BaiduMapFragment;
+import com.jnu.student.Fragment.BookListFragment;
+import com.jnu.student.Fragment.WebViewFragment;
 import com.jnu.student.data.Book;
-import com.jnu.student.data.DataBank;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    BooksAdapter booksAdapter;
+    private final String[] tabHeaderStrings = {"图书", "地图", "新闻"};
+    //BooksAdapter booksAdapter;
     ArrayList<Book> books;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //这是用布局实现
         setContentView(R.layout.activity_main);
+        ViewPager2 viewPager = findViewById(R.id.view_pager);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(),getLifecycle());
+        viewPager.setAdapter(fragmentAdapter);
+        new TabLayoutMediator(tabLayout,viewPager,
+                ((tab, position) -> tab.setText(tabHeaderStrings[position]))).attach();
 
-        RecyclerView mainRecyclerView = findViewById(R.id.recyclerview_main);
-        mainRecyclerView.setLayoutManager(new LinearLayoutManager(this));//设置布局管理器
+        /*mainRecyclerView.setLayoutManager(new LinearLayoutManager(this));//设置布局管理器
 
         //books = new ArrayList<Book>();
         books = new DataBank().LoadBook(this.getApplicationContext());
@@ -51,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             books.add(new Book("软件项目管理案例教程（第4版）",R.drawable.book_2));
             books.add(new Book("创新工程实践",R.drawable.book_no_name));
         }
-        //ShopItemAdapter shopItemAdapter = new ShopItemAdapter(books);
         booksAdapter = new BooksAdapter(books);
         mainRecyclerView.setAdapter(booksAdapter);
 
@@ -205,6 +200,35 @@ public class MainActivity extends AppCompatActivity {
             public TextView getTextViewBookTitle() {
                 return textViewBookTitle;
             }
+        }*/
+    }
+
+    public static class FragmentAdapter extends FragmentStateAdapter {
+        private static final int NUM_TABS = 3;
+
+        public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+            super(fragmentManager, lifecycle);
+        }
+
+        @NonNull
+        @Override
+        public Fragment createFragment(int position) {
+            // 根据位置返回对应的Fragment实例
+            switch (position) {
+                case 0:
+                    return new BookListFragment();
+                case 1:
+                    return new BaiduMapFragment();
+                case 2:
+                    return new WebViewFragment();
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        public int getItemCount() {
+            return NUM_TABS;
         }
     }
 }

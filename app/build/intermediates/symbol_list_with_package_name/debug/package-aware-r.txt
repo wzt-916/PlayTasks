@@ -2893,6 +2893,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id baidu_web_view
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3234,6 +3235,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id tabMode
+id tab_layout
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3288,6 +3290,7 @@ id up
 id useLogo
 id vertical_only
 id view_offset_helper
+id view_pager
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -3429,6 +3432,9 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_baidu_map
+layout fragment_book_list
+layout fragment_web_view
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3542,6 +3548,7 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hello
 string hello_android
+string hello_blank_fragment
 string hello_world
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
