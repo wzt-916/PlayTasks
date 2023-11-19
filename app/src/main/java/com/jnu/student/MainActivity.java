@@ -12,7 +12,7 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.jnu.student.Fragment.BaiduMapFragment;
+import com.jnu.student.Fragment.TencentMapFragment;
 import com.jnu.student.Fragment.BookListFragment;
 import com.jnu.student.Fragment.WebViewFragment;
 import com.jnu.student.data.Book;
@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     return new BookListFragment();
                 case 1:
-                    return new BaiduMapFragment();
+                    return new TencentMapFragment();
                 case 2:
                     return new WebViewFragment();
                 default:

@@ -25,8 +25,8 @@ id view_pager
 layout activity_book_details
 layout activity_main
 layout book_item_row
-layout fragment_baidu_map
 layout fragment_book_list
+layout fragment_tencent_map
 layout fragment_web_view
 mipmap ic_launcher
 mipmap ic_launcher_round
