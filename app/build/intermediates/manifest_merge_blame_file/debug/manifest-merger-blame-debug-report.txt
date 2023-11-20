@@ -40,7 +40,7 @@
 23-->[androidx.core:core:1.9.0] C:\Users\86178\.gradle\caches\transforms-3\28a7af075d5af218c19b63a2f54b1523\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 24
 25    <application
-25-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:13:5-41:19
+25-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:13:5-44:19
 26        android:allowBackup="true"
 26-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:14:9-35
 27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -65,58 +65,64 @@
 38        android:usesCleartextTraffic="true" >
 38-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:22:9-44
 39        <activity
-39-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:24:9-32:20
-40            android:name="com.jnu.student.Activity.MainActivity"
-40-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:25:13-50
-41            android:exported="true" >
-41-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:26:13-36
-42            <intent-filter>
-42-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:27:13-31:29
-43                <action android:name="android.intent.action.MAIN" />
-43-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:28:17-69
-43-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:28:25-66
-44
-45                <category android:name="android.intent.category.LAUNCHER" />
-45-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:30:17-77
-45-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:30:27-74
-46            </intent-filter>
-47        </activity>
-48
-49        <meta-data
-49-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:34:9-36:67
-50            android:name="TencentMapSDK"
-50-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:35:13-41
-51            android:value="UJABZ-J7HWT-WAVX4-LNTKY-VEFRT-KGB7J" />
-51-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:36:13-64
-52
-53        <activity
-53-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:38:9-40:40
-54            android:name="com.jnu.student.BookDetailsActivity"
-54-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:39:13-48
-55            android:exported="false" />
-55-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:40:13-37
-56
-57        <provider
-57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-58            android:name="androidx.startup.InitializationProvider"
-58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-59            android:authorities="com.jnu.student.androidx-startup"
-59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-60            android:exported="false" >
-60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-61            <meta-data
-61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-62                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-63                android:value="androidx.startup" />
-63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+39-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:24:9-26:40
+40            android:name="com.jnu.student.Activity.BottomNavegationActivity"
+40-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:25:13-62
+41            android:exported="false" />
+41-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:26:13-37
+42        <activity
+42-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:27:9-35:20
+43            android:name="com.jnu.student.Activity.MainActivity"
+43-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:28:13-50
+44            android:exported="true" >
+44-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:29:13-36
+45            <intent-filter>
+45-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:30:13-34:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:31:17-69
+46-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:31:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:33:17-77
+48-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:33:27-74
+49            </intent-filter>
+50        </activity>
+51
+52        <meta-data
+52-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:37:9-39:67
+53            android:name="TencentMapSDK"
+53-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:38:13-41
+54            android:value="UJABZ-J7HWT-WAVX4-LNTKY-VEFRT-KGB7J" />
+54-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:39:13-64
+55
+56        <activity
+56-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:41:9-43:40
+57            android:name="com.jnu.student.BookDetailsActivity"
+57-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:42:13-48
+58            android:exported="false" />
+58-->C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:43:13-37
+59
+60        <provider
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+61            android:name="androidx.startup.InitializationProvider"
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+62            android:authorities="com.jnu.student.androidx-startup"
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+63            android:exported="false" >
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 64            <meta-data
-64-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\86178\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-65                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-65-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\86178\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 66                android:value="androidx.startup" />
-66-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\86178\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-67        </provider>
-68    </application>
-69
-70</manifest>
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\86178\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+67            <meta-data
+67-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\86178\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+68                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\86178\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+69                android:value="androidx.startup" />
+69-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\86178\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+70        </provider>
+71    </application>
+72
+73</manifest>

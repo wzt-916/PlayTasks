@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Playtask</string>
+    <string name="tasks">任务</string>
+    <string name="reward">奖励</string>
+    <string name="home">我</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
