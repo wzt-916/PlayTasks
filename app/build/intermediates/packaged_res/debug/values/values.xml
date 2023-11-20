@@ -7,15 +7,18 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
-    <string name="JNU">JNU</string>
-    <string name="app_name">我的第一个应用</string>
-    <string name="change_text">交换文本</string>
-    <string name="hello">hello</string>
-    <string name="hello_android">你好, Android</string>
+    <string name="app_name">Playtask</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hello_world">Hello world</string>
-    <string name="string_book">书本名字:</string>
-    <string name="string_ok">ok</string>
+    <style name="CustomTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabIndicatorColor">@color/teal_200</item>
+        <item name="tabIndicatorHeight">4dp</item> 
+        
+    </style>
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">50dp</item> 
+        <item name="android:textStyle">bold</item>
+        
+    </style>
     <style name="Theme.MyFirstApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         
         <item name="colorPrimary">@color/purple_500</item>

@@ -22,10 +22,10 @@ com.jnu.student.app-lifecycle-viewmodel-savedstate-2.5.1-20 C:\Users\86178\.grad
 com.jnu.student.app-activity-1.6.0-21 C:\Users\86178\.gradle\caches\transforms-3\df4f14cb1b234b4e780fd906db83cbe7\transformed\activity-1.6.0\res
 com.jnu.student.app-drawerlayout-1.1.1-22 C:\Users\86178\.gradle\caches\transforms-3\e2d2d3c4dd62635dbea352ab171561e5\transformed\drawerlayout-1.1.1\res
 com.jnu.student.app-transition-1.2.0-23 C:\Users\86178\.gradle\caches\transforms-3\e44573450bfeaacfbe89d93e4952b042\transformed\transition-1.2.0\res
-com.jnu.student.app-pngs-24 C:\Users\86178\AndroidStudioProjects\MyFirstApplication\MyFirstApplication\app\build\generated\res\pngs\debug
-com.jnu.student.app-resValues-25 C:\Users\86178\AndroidStudioProjects\MyFirstApplication\MyFirstApplication\app\build\generated\res\resValues\debug
-com.jnu.student.app-packageDebugResources-26 C:\Users\86178\AndroidStudioProjects\MyFirstApplication\MyFirstApplication\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.jnu.student.app-packageDebugResources-27 C:\Users\86178\AndroidStudioProjects\MyFirstApplication\MyFirstApplication\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.jnu.student.app-merged_res-28 C:\Users\86178\AndroidStudioProjects\MyFirstApplication\MyFirstApplication\app\build\intermediates\merged_res\debug
-com.jnu.student.app-debug-29 C:\Users\86178\AndroidStudioProjects\MyFirstApplication\MyFirstApplication\app\src\debug\res
-com.jnu.student.app-main-30 C:\Users\86178\AndroidStudioProjects\MyFirstApplication\MyFirstApplication\app\src\main\res
+com.jnu.student.app-pngs-24 C:\Users\86178\AndroidStudioProjects\PlayTasks\app\build\generated\res\pngs\debug
+com.jnu.student.app-resValues-25 C:\Users\86178\AndroidStudioProjects\PlayTasks\app\build\generated\res\resValues\debug
+com.jnu.student.app-packageDebugResources-26 C:\Users\86178\AndroidStudioProjects\PlayTasks\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.jnu.student.app-packageDebugResources-27 C:\Users\86178\AndroidStudioProjects\PlayTasks\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.jnu.student.app-merged_res-28 C:\Users\86178\AndroidStudioProjects\PlayTasks\app\build\intermediates\merged_res\debug
+com.jnu.student.app-debug-29 C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\debug\res
+com.jnu.student.app-main-30 C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\res
