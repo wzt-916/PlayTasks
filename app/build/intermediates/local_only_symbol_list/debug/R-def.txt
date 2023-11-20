@@ -13,13 +13,16 @@ drawable ic_launcher_foreground
 drawable reward
 drawable tasks
 id bottom_navigation_menu
+id button_view_pager
+id daily_tasks
+id fragment_container
 id navigation_home
 id navigation_reward
 id navigation_tasks
 id tab_layout
-id view_pager
 layout activity_bottom_navegation
 layout activity_main
+layout fragment_button_tasks
 layout fragment_daily_tasks
 layout fragment_dungeon_tasks
 layout fragment_general_tasks

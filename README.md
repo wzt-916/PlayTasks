@@ -5,15 +5,17 @@
 
 ## Playtask界面
 
-### Playtask界面：任务栏
-
-#### Playtask界面：任务栏的TabLayout布局
+##### Playtask界面：任务栏的TabLayout布局
 
 ![image-20231120120812736](image/2.jpg)
 
-Playtask界面：底部导航栏
+##### Playtask界面：底部导航栏
 
 ![](image/5.png)
+
+##### Playtask界面：底部导航栏(任务)与TabLayout布局
+
+![](image/6.png)
 
 ## 错误记录
 

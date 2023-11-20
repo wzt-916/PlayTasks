@@ -2906,6 +2906,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id button_view_pager
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2944,6 +2945,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id daily_tasks
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3001,6 +3003,7 @@ id fixed
 id flip
 id floating
 id forever
+id fragment_container
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3287,7 +3290,6 @@ id up
 id useLogo
 id vertical_only
 id view_offset_helper
-id view_pager
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -3428,6 +3430,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_button_tasks
 layout fragment_daily_tasks
 layout fragment_dungeon_tasks
 layout fragment_general_tasks
