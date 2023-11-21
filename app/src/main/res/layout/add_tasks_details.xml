@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 标题 -->
+    <EditText
+        android:id="@+id/edit_Text_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="标题"
+        android:inputType="text" />
+
+    <!-- 得分 -->
+    <EditText
+        android:id="@+id/edit_Text_Score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_Text_Title"
+        android:layout_marginTop="16dp"
+        android:hint="得分"
+        android:inputType="number" />
+
+    <!-- 每日/每周/普通 三选一 -->
+    <RadioGroup
+        android:id="@+id/radio_Group_Frequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_Text_Score"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_Button_Daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="每日" />
+
+        <RadioButton
+            android:id="@+id/radio_Button_Weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="每周" />
+
+        <RadioButton
+            android:id="@+id/radio_Button_Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="普通" />
+    </RadioGroup>
+
+    <!-- 标签 -->
+    <EditText
+        android:id="@+id/editTextTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_Group_Frequency"
+        android:layout_marginTop="16dp"
+        android:hint="标签"
+        android:inputType="text" />
+
+    <!-- 确定按钮 -->
+    <Button
+        android:id="@+id/button_Create_Task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextTags"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="确定" />
+
+</RelativeLayout>

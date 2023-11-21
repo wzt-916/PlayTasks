@@ -44,8 +44,12 @@
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\fragment_daily_tasks.xml"
     },
     {
-        "merged": "com.jnu.student.app-merged_res-28:/layout_tasks_row.xml.flat",
-        "source": "com.jnu.student.app-main-30:/layout/tasks_row.xml"
+        "merged": "com.jnu.student.app-merged_res-28:/layout_add_tasks_details.xml.flat",
+        "source": "com.jnu.student.app-main-30:/layout/add_tasks_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_add_tasks_details.xml.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\add_tasks_details.xml"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -102,6 +106,10 @@
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\drawable_reward.png.flat",
         "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\drawable\\reward.png"
+    },
+    {
+        "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\layout_fragment_tab_tasks.xml.flat",
+        "source": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-main-30:\\layout\\fragment_tab_tasks.xml"
     },
     {
         "merged": "C:\\Users\\86178\\.gradle\\daemon\\8.0\\com.jnu.student.app-merged_res-28:\\menu_add_button.xml.flat",

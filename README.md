@@ -17,11 +17,15 @@
 
 <img src="image/6.png" style="zoom:50%;" />
 
-#### Playtask界面：各种任务页面的实现显示
+##### Playtask界面：各种任务页面的实现显示
 
 <img src="image/7.png" style="zoom: 50%;" />
 
 <img src="image/8.png" style="zoom:50%;" />
+
+##### Playtask界面：右上角角标添加
+
+<img src="image/9.png" style="zoom:50%;" />
 
 ## 错误记录
 

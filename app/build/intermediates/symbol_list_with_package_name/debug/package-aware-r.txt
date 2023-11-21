@@ -2909,6 +2909,7 @@ id bounceEnd
 id bounceStart
 id btn_msg
 id buttonPanel
+id button_Create_Task
 id button_view_pager
 id cache_measures
 id callMeasure
@@ -2983,6 +2984,9 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editTextTags
+id edit_Text_Score
+id edit_Text_Title
 id edit_query
 id elastic
 id embed
@@ -3157,6 +3161,10 @@ id pressed
 id progress_circular
 id progress_horizontal
 id radio
+id radio_Button_Daily
+id radio_Button_Regular
+id radio_Button_Weekly
+id radio_Group_Frequency
 id ratio
 id rectangles
 id recyclerview_main
@@ -3422,6 +3430,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_bottom_navegation
 layout activity_main
+layout add_tasks_details
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3438,10 +3447,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_button_tasks
 layout fragment_daily_tasks
 layout fragment_dungeon_tasks
 layout fragment_general_tasks
+layout fragment_tab_tasks
 layout fragment_tasks_list
 layout fragment_weekly_tasks
 layout m3_alert_dialog

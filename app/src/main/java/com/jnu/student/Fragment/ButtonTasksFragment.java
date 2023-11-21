@@ -18,7 +18,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.jnu.student.R;
 
 public class ButtonTasksFragment extends Fragment {
-    private String []tabHeaderStrings = {"每日任务","每周任务","普通任务","副本任务"};
+    private String []tabHeaderStrings = {"每日任务","每周任务","普通任务","副本任务","已完成","成就点数"};
     public ButtonTasksFragment() {
         // Required empty public constructor
     }
@@ -40,7 +40,7 @@ public class ButtonTasksFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_button_tasks, container, false);
+        View root = inflater.inflate(R.layout.fragment_tab_tasks, container, false);
         ViewPager2 viewPager = root.findViewById(R.id.button_view_pager);
         TabLayout tabLayout = root.findViewById(R.id.tab_layout);
         // 创建适配器
@@ -54,7 +54,7 @@ public class ButtonTasksFragment extends Fragment {
         return root;
     }
     public class FragmentAdapter extends FragmentStateAdapter {
-        private static final int NUM_TABS = 4;
+        private static final int NUM_TABS = 6;
         public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
             super(fragmentManager, lifecycle);
         }
