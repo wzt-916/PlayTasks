@@ -37,7 +37,7 @@
         android:theme="@style/Theme.MyFirstApplication"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.jnu.student.Activity.BottomNavegationActivity"
+            android:name="com.jnu.student.Activity.BottomNavigationActivity"
             android:exported="false" />
         <activity
             android:name="com.jnu.student.Activity.MainActivity"

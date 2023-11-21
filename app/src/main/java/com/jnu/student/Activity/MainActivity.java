@@ -1,6 +1,7 @@
 package com.jnu.student.Activity;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -35,7 +36,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
             if (item.getItemId() == R.id.navigation_home) {
-                // 用户点击了“首页”，这里可以添加对应逻辑
+                // 用户点击了“首页”
+                return true;
+            }
+            if (item.getItemId() == R.id.navigation_statistics) {
+                // 用户点击了“统计”，这里可以添加对应逻辑
+                Fragment statisticsFragment = new DailyTasksFragment();
+                loadTasksFragment(statisticsFragment);
                 return true;
             }
             if (item.getItemId() == R.id.navigation_reward) {
@@ -51,5 +58,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .commit();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_button, menu);
+        return super.onCreateOptionsMenu(menu);
+
     }
 }

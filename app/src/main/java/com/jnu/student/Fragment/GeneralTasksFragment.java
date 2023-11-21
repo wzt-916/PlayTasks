@@ -3,47 +3,30 @@ package com.jnu.student.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.jnu.student.R;
+import com.jnu.student.data.Tasks;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GeneralTasksFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
 public class GeneralTasksFragment extends Fragment {
+    private RecyclerView tasksRecyclerView;
+    private GeneralTasksFragment.TasksAdapter tasksAdapter;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private ArrayList<Tasks> general_tasks;
     public GeneralTasksFragment() {
         // Required empty public constructor
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GeneralTasksFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static GeneralTasksFragment newInstance(String param1, String param2) {
         GeneralTasksFragment fragment = new GeneralTasksFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,15 +35,92 @@ public class GeneralTasksFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_general_tasks, container, false);
+        // 通过提供的 inflater 将 fragment_book_list 布局实例化为视图
+        // rootView 将包含 fragment_book_list.xml 中定义的视图
+        View rootView = inflater.inflate(R.layout.fragment_tasks_list, container, false);
+        // 从实例化的布局中查找具有特定 ID（R.id.recyclerview_main）的 RecyclerView
+        tasksRecyclerView = rootView.findViewById(R.id.recyclerview_main);
+        // 创建一个 LinearLayoutManager 来管理 RecyclerView 中的项目
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
+        // 将 LinearLayoutManager 的方向设置为垂直
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        tasksRecyclerView.setLayoutManager(linearLayoutManager);
+        general_tasks = new ArrayList<>();
+        general_tasks.add(new Tasks("准时睡觉",100));
+        general_tasks.add(new Tasks("看青年大学习",20));
+        general_tasks.add(new Tasks("锻炼",10));
+        tasksAdapter = new GeneralTasksFragment.TasksAdapter(general_tasks);
+        tasksRecyclerView.setAdapter(tasksAdapter);
+        registerForContextMenu(tasksRecyclerView);
+        return rootView;
+    }
+    public class TasksAdapter extends RecyclerView.Adapter<GeneralTasksFragment.TasksAdapter.ViewHolder> {
+
+        private ArrayList<Tasks> tasksArrayList;
+
+        public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
+            private final TextView textViewTitle;
+            private final TextView textViewScore;
+
+            @Override
+            public void onCreateContextMenu(ContextMenu menu, View v,
+                                            ContextMenu.ContextMenuInfo menuInfo) {
+                menu.setHeaderTitle("具体操作");
+
+                menu.add(0, 0, this.getAdapterPosition(), "添加提醒" + this.getAdapterPosition());
+                menu.add(0, 1, this.getAdapterPosition(), "删除" + this.getAdapterPosition());
+            }
+
+            public ViewHolder(View tasksView) {
+                super(tasksView);
+                // Define click listener for the ViewHolder's View
+
+                textViewTitle = tasksView.findViewById(R.id.text_view_tasks_title);
+                textViewScore = tasksView.findViewById(R.id.text_view_score);
+                tasksView.setOnCreateContextMenuListener(this);
+            }
+
+            public TextView getTextViewTitle() {
+                return textViewTitle;
+            }
+
+            public TextView getTextViewScore() {
+                return textViewScore;
+            }
+
+        }
+
+        public TasksAdapter(ArrayList<Tasks> tasks) {
+            tasksArrayList = tasks;
+        }
+
+        // Create new views (invoked by the layout manager)
+        @Override
+        public GeneralTasksFragment.TasksAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+            // Create a new view, which defines the UI of the list item
+            View view = LayoutInflater.from(viewGroup.getContext())
+                    .inflate(R.layout.tasks_row, viewGroup, false);
+
+            return new GeneralTasksFragment.TasksAdapter.ViewHolder(view);
+        }
+
+        // Replace the contents of a view (invoked by the layout manager)
+        @Override
+        public void onBindViewHolder(GeneralTasksFragment.TasksAdapter.ViewHolder viewHolder, final int position) {
+            viewHolder.getTextViewTitle().setText(tasksArrayList.get(position).getTitle());
+            viewHolder.getTextViewScore().setText(tasksArrayList.get(position).getScore()+ "");
+        }
+
+        // Return the size of your dataset (invoked by the layout manager)
+        @Override
+        public int getItemCount() {
+            return tasksArrayList.size();
+        }
     }
 }

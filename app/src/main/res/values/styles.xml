@@ -10,4 +10,5 @@
         <item name="android:textStyle">bold</item><!-- 加粗 -->
         <!-- 可以根据需要调整其他文字样式属性 -->
     </style>
+
 </resources>

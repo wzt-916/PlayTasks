@@ -7,15 +7,21 @@
 
 ##### Playtask界面：任务栏的TabLayout布局
 
-![image-20231120120812736](image/2.jpg)
+<img src="image/2.jpg" alt="image-20231120120812736" style="zoom:50%;" />
 
 ##### Playtask界面：底部导航栏
 
-![](image/5.png)
+<img src="image/5.png" style="zoom:50%;" />
 
 ##### Playtask界面：底部导航栏(任务)与TabLayout布局
 
-![](image/6.png)
+<img src="image/6.png" style="zoom:50%;" />
+
+#### Playtask界面：各种任务页面的实现显示
+
+<img src="image/7.png" style="zoom: 50%;" />
+
+<img src="image/8.png" style="zoom:50%;" />
 
 ## 错误记录
 

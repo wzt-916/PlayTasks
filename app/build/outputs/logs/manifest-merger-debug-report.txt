@@ -116,7 +116,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\86
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:15:9-65
 	android:usesCleartextTraffic
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:22:9-44
-activity#com.jnu.student.Activity.BottomNavegationActivity
+activity#com.jnu.student.Activity.BottomNavigationActivity
 ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:24:9-26:40
 	android:exported
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:26:13-37
