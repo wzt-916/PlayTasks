@@ -8,7 +8,7 @@
         android:id="@+id/edit_Text_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="标题"
+        android:hint="@string/title"
         android:inputType="text" />
 
     <!-- 得分 -->
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_Text_Title"
         android:layout_marginTop="16dp"
-        android:hint="得分"
+        android:hint="@string/score"
         android:inputType="number" />
 
     <!-- 每日/每周/普通 三选一 -->
@@ -34,29 +34,29 @@
             android:id="@+id/radio_Button_Daily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="每日" />
+            android:text="@string/daily" />
 
         <RadioButton
             android:id="@+id/radio_Button_Weekly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="每周" />
+            android:text="@string/weekly" />
 
         <RadioButton
             android:id="@+id/radio_Button_Regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="普通" />
+            android:text="@string/regular" />
     </RadioGroup>
 
     <!-- 标签 -->
     <EditText
-        android:id="@+id/editTextTags"
+        android:id="@+id/edit_Text_Tags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/radio_Group_Frequency"
         android:layout_marginTop="16dp"
-        android:hint="标签"
+        android:hint="@string/tags"
         android:inputType="text" />
 
     <!-- 确定按钮 -->
@@ -64,9 +64,9 @@
         android:id="@+id/button_Create_Task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextTags"
+        android:layout_below="@id/edit_Text_Tags"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:text="确定" />
+        android:text="@string/ok" />
 
 </RelativeLayout>

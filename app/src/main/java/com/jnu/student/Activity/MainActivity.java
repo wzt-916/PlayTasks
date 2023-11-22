@@ -1,11 +1,15 @@
 package com.jnu.student.Activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
@@ -17,6 +21,12 @@ import com.jnu.student.R;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView btmNavView;
+    // 声明一个用于启动带有返回结果的活动的管理器(添加任务)
+    ActivityResultLauncher<Intent> addTasksLauncher;
+    // 声明一个用于启动带有返回结果的活动的管理器(加入副本)
+    ActivityResultLauncher<Intent> addDungeonLauncher;
+    // 声明一个用于启动带有返回结果的活动的管理器(排序)
+    ActivityResultLauncher<Intent> SortLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +37,39 @@ public class MainActivity extends AppCompatActivity {
             Fragment tasksFragment = new ButtonTasksFragment();
             loadTasksFragment(tasksFragment);
         }
+        // 为启动带有返回结果的活动(Activity)注册一个处理程序(添加任务)
+        addTasksLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
 
+                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
+
+                    }
+                }
+        );
+        // 为启动带有返回结果的活动(Activity)注册一个处理程序(添加副本)
+        addDungeonLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+
+                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
+
+                    }
+                }
+        );
+        // 为启动带有返回结果的活动(Activity)注册一个处理程序(排序)
+        SortLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+
+                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
+
+                    }
+                }
+        );
         // 获取底部导航栏
         btmNavView = findViewById(R.id.bottom_navigation_menu);
         btmNavView.setOnItemSelectedListener(item -> {
@@ -89,15 +131,21 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getTitle().toString()) {
                     case "新建任务":
                         // 处理选项一点击事件
-                        Toast.makeText(this, "选项一被点击", Toast.LENGTH_SHORT).show();
+                        // 创建一个新的意图（Intent）以启动 AddTasksActivity
+                        Intent intent1 = new Intent(this, AddTasksActivity.class);
+                        // 使用 addTasksLauncher 启动指定的 Intent
+                        addTasksLauncher.launch(intent1);
                         return true;
                     case "加入副本":
                         // 处理选项二点击事件
-                        Toast.makeText(this, "选项二被点击", Toast.LENGTH_SHORT).show();
+                        // 创建一个新的意图（Intent）以启动 AddTasksActivity
+                        Intent intent2 = new Intent(this, addDungeonActivity.class);
+                        // 使用 addTasksLauncher 启动指定的 Intent
+                        addTasksLauncher.launch(intent2);
                         return true;
                     case "排序":
                         // 处理选项三点击事件
-                        Toast.makeText(this, "选项三被点击", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "排序成功", Toast.LENGTH_SHORT).show();
                         return true;
                 }
                 return false;

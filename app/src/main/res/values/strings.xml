@@ -4,6 +4,16 @@
     <string name="reward">奖励</string>
     <string name="home">我</string>
     <string name="statistics">统计</string>
+    <string name="junior">初级</string>
+    <string name="Senior">高级</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
+    <string name="title">标题</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="score">得分</string>
+    <string name="daily">每日</string>
+    <string name="weekly">每周</string>
+    <string name="regular">普通</string>
+    <string name="tags">标签</string>
 </resources>

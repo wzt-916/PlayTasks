@@ -37,7 +37,10 @@
         android:theme="@style/Theme.MyFirstApplication"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.jnu.student.Activity.BottomNavigationActivity"
+            android:name="com.jnu.student.Activity.addDungeonActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jnu.student.Activity.AddTasksActivity"
             android:exported="false" />
         <activity
             android:name="com.jnu.student.Activity.MainActivity"

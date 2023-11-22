@@ -2908,8 +2908,11 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btn_msg
+id butto_Cancel
 id buttonPanel
 id button_Create_Task
+id button_Layout
+id button_OK
 id button_view_pager
 id cache_measures
 id callMeasure
@@ -2984,8 +2987,8 @@ id easeIn
 id easeInOut
 id easeOut
 id east
-id editTextTags
 id edit_Text_Score
+id edit_Text_Tags
 id edit_Text_Title
 id edit_query
 id elastic
@@ -3164,7 +3167,10 @@ id radio
 id radio_Button_Daily
 id radio_Button_Regular
 id radio_Button_Weekly
+id radio_Group
 id radio_Group_Frequency
+id radio_Junior
+id radio_Senior
 id ratio
 id rectangles
 id recyclerview_main
@@ -3428,6 +3434,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_dungeon
 layout activity_bottom_navegation
 layout activity_main
 layout add_tasks_details
@@ -3520,6 +3527,7 @@ menu navigation
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string Senior
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3556,10 +3564,12 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string daily
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -3570,6 +3580,7 @@ string hide_bottom_view_on_scroll_behavior
 string home
 string icon_content_description
 string item_view_role_description
+string junior
 string m3_sys_motion_easing_emphasized
 string m3_sys_motion_easing_emphasized_accelerate
 string m3_sys_motion_easing_emphasized_decelerate
@@ -3665,12 +3676,15 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string ok
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string regular
 string reward
+string score
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -3679,7 +3693,10 @@ string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string statistics
 string status_bar_notification_info_overflow
+string tags
 string tasks
+string title
+string weekly
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

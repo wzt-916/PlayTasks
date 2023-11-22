@@ -27,6 +27,16 @@
 
 <img src="image/9.png" style="zoom:50%;" />
 
+##### Playtask界面：右上角角标添加点击后跳转新的页面
+
+添加任务：
+
+<img src="image/10.png" style="zoom:50%;" />
+
+加入副本：
+
+<img src="image/11.png" style="zoom:50%;" />
+
 ## 错误记录
 
 1. 实现底部导航栏

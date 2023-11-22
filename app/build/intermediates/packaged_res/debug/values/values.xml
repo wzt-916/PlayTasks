@@ -7,12 +7,22 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <string name="Senior">高级</string>
     <string name="app_name">Playtask</string>
+    <string name="cancel">取消</string>
+    <string name="daily">每日</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">我</string>
+    <string name="junior">初级</string>
+    <string name="ok">确定</string>
+    <string name="regular">普通</string>
     <string name="reward">奖励</string>
+    <string name="score">得分</string>
     <string name="statistics">统计</string>
+    <string name="tags">标签</string>
     <string name="tasks">任务</string>
+    <string name="title">标题</string>
+    <string name="weekly">每周</string>
     <style name="CustomTabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabIndicatorColor">@color/teal_200</item>
         <item name="tabIndicatorHeight">4dp</item> 
