@@ -43,6 +43,12 @@
 
 <img src="image/13.png" style="zoom:50%;" />
 
+##### Playtask功能：实现添加任务功能
+
+<img src="image/14.png" style="zoom:50%;" />
+
+
+
 ## 错误记录
 
 #### **实现底部导航栏**

@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class DataWeeklyTasks {
-    final String DATA_FILENAME = "weely_tasks.data";
+    final String DATA_FILENAME = "weekly_tasks.data";
     public ArrayList<Tasks> LoadTasks(Context context) {
         ArrayList<Tasks> data = new ArrayList<>();
         try {

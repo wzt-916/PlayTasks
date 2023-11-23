@@ -1,5 +1,7 @@
 package com.jnu.student.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -9,11 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.jnu.student.Activity.AddTasksActivity;
 import com.jnu.student.R;
 import com.jnu.student.data.DataDailyTasks;
 import com.jnu.student.data.Tasks;
@@ -55,9 +60,9 @@ public class DailyTasksFragment extends Fragment {
                              Bundle savedInstanceState) {
         // 通过提供的 inflater 将 fragment_book_list 布局实例化为视图
         // rootView 将包含 fragment_book_list.xml 中定义的视图
-        View rootView = inflater.inflate(R.layout.fragment_tasks_list, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_daily_tasks, container, false);
         // 从实例化的布局中查找具有特定 ID（R.id.recyclerview_main）的 RecyclerView
-        tasksRecyclerView = rootView.findViewById(R.id.recyclerview_main);
+        tasksRecyclerView = rootView.findViewById(R.id.recycle_daily);
         // 创建一个 LinearLayoutManager 来管理 RecyclerView 中的项目
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
         // 将 LinearLayoutManager 的方向设置为垂直
@@ -74,7 +79,52 @@ public class DailyTasksFragment extends Fragment {
         registerForContextMenu(tasksRecyclerView);
         return rootView;
     }
+   public boolean onContextItemSelected(MenuItem item) {
+        if(item.getGroupId() != 0)
+        {
+            return false;
+        }
+        switch (item.getItemId()) {
+            case 0:
+                // Do something for item 1
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(this.getContext());
+                builder1.setTitle("添加提醒");
+                builder1.setMessage("记得添加呀");
+                builder1.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 处理确定按钮点击事件的逻辑
+                    }
+                });
+                builder1.create().show();
+                break;
+            case 1:
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(this.getContext());
+                builder2.setTitle("删除");
+                builder2.setMessage("你要删除吗?");
+                builder2.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getContext(), "确定按钮被点击", Toast.LENGTH_SHORT).show();
+                        daily_tasks.remove(item.getOrder());
+                        tasksAdapter.notifyItemRemoved(item.getOrder());
+                        new DataDailyTasks().SaveTasks(DailyTasksFragment.this.getContext(),daily_tasks);
+                    }
+                });
+                builder2.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
+                    }
+                });
+                builder2.create().show();
+                // Do something for item 2
+                break;
+            default:
+                return super.onContextItemSelected(item);
+        }
+        return true;
+    }
     public class TasksAdapter extends RecyclerView.Adapter<DailyTasksFragment.TasksAdapter.ViewHolder> {
 
         private ArrayList<Tasks> tasksArrayList;

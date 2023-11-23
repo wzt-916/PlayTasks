@@ -11,8 +11,10 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -69,13 +71,13 @@ public class ButtonTasksFragment extends Fragment {
             // 根据位置返回对应的Fragment实例
             switch (position) {
                 case 0:
-                    return daily_tasks;
+                    return new DailyTasksFragment();
                 case 1:
-                    return weekly_tasks;
+                    return new WeeklyTasksFragment();
                 case 2:
-                    return general_tasks;
+                    return new GeneralTasksFragment();
                 case 3:
-                    return dungeon_tasks;
+                    return new DungeonTasksFragment();
                 default:
                     return null;
             }
@@ -86,4 +88,5 @@ public class ButtonTasksFragment extends Fragment {
             return NUM_TABS;
         }
     }
+
 }

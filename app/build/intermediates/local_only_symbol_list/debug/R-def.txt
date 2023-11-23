@@ -30,7 +30,6 @@ id button_Layout
 id button_OK
 id button_view_pager
 id checkBox
-id daily_tasks
 id fragment_container
 id navigation_home
 id navigation_reward
@@ -39,6 +38,10 @@ id navigation_tasks
 id radio_Group
 id radio_Junior
 id radio_Senior
+id recycl_dungeon
+id recycl_general
+id recycl_weekly
+id recycle_daily
 id recyclerview_main
 id tab_layout
 id text_view_score

@@ -2960,7 +2960,6 @@ int id currentState 0x7f080087
 int id custom 0x7f080088
 int id customPanel 0x7f080089
 int id cut 0x7f08008a
-int id daily_tasks 0x7f08008b
 int id date_picker_actions 0x7f08008c
 int id decelerate 0x7f08008d
 int id decelerateAndComplete 0x7f08008e
@@ -3173,6 +3172,10 @@ int id radio_Junior 0x7f08020d
 int id radio_Senior 0x7f08020e
 int id ratio 0x7f08015a
 int id rectangles 0x7f08015b
+int id recycl_dungeon 0x7f080219
+int id recycl_general 0x7f08021a
+int id recycl_weekly 0x7f08021b
+int id recycle_daily 0x7f08021c
 int id recyclerview_main 0x7f0801f7
 int id reverseSawtooth 0x7f08015c
 int id right 0x7f08015d

@@ -1,5 +1,7 @@
 package com.jnu.student.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,11 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jnu.student.R;
+import com.jnu.student.data.DataGeneralTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
@@ -75,8 +80,8 @@ public class DungeonTasksFragment extends Fragment {
                                             ContextMenu.ContextMenuInfo menuInfo) {
                 menu.setHeaderTitle("具体操作");
 
-                menu.add(0, 0, this.getAdapterPosition(), "添加提醒" + this.getAdapterPosition());
-                menu.add(0, 1, this.getAdapterPosition(), "删除" + this.getAdapterPosition());
+                menu.add(3, 0, this.getAdapterPosition(), "添加提醒" + this.getAdapterPosition());
+                menu.add(3, 1, this.getAdapterPosition(), "删除" + this.getAdapterPosition());
             }
 
             public ViewHolder(View tasksView) {

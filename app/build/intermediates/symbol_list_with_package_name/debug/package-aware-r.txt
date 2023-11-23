@@ -2961,7 +2961,6 @@ id currentState
 id custom
 id customPanel
 id cut
-id daily_tasks
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3174,6 +3173,10 @@ id radio_Junior
 id radio_Senior
 id ratio
 id rectangles
+id recycl_dungeon
+id recycl_general
+id recycl_weekly
+id recycle_daily
 id recyclerview_main
 id reverseSawtooth
 id right
