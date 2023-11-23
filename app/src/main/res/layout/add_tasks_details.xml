@@ -5,7 +5,7 @@
 
     <!-- 标题 -->
     <EditText
-        android:id="@+id/edit_Text_Title"
+        android:id="@+id/add_tasks_details_edit_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/title"
@@ -13,37 +13,37 @@
 
     <!-- 得分 -->
     <EditText
-        android:id="@+id/edit_Text_Score"
+        android:id="@+id/add_tasks_details_edit_Score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_Text_Title"
+        android:layout_below="@id/add_tasks_details_edit_Title"
         android:layout_marginTop="16dp"
         android:hint="@string/score"
         android:inputType="number" />
 
     <!-- 每日/每周/普通 三选一 -->
     <RadioGroup
-        android:id="@+id/radio_Group_Frequency"
+        android:id="@+id/add_tasks_details_Group_Frequency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_Text_Score"
+        android:layout_below="@id/add_tasks_details_edit_Score"
         android:layout_marginTop="16dp"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radio_Button_Daily"
+            android:id="@+id/add_tasks_details_Button_Daily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/daily" />
 
         <RadioButton
-            android:id="@+id/radio_Button_Weekly"
+            android:id="@+id/add_tasks_details_Button_Weekly"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weekly" />
 
         <RadioButton
-            android:id="@+id/radio_Button_Regular"
+            android:id="@+id/add_tasks_details_Button_Regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/regular" />
@@ -51,22 +51,35 @@
 
     <!-- 标签 -->
     <EditText
-        android:id="@+id/edit_Text_Tags"
+        android:id="@+id/add_tasks_details_edit_Tags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/radio_Group_Frequency"
+        android:layout_below="@id/add_tasks_details_Group_Frequency"
         android:layout_marginTop="16dp"
         android:hint="@string/tags"
         android:inputType="text" />
 
     <!-- 确定按钮 -->
+
     <Button
-        android:id="@+id/button_Create_Task"
+        android:id="@+id/add_tasks_details_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_Text_Tags"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="276dp"
         android:text="@string/ok" />
 
+    <Button
+        android:id="@+id/add_tasks_details_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="274dp"
+        android:text="@string/cancel" />
 </RelativeLayout>

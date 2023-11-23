@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jnu.student.R;
+import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataGeneralTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
@@ -51,10 +53,7 @@ public class GeneralTasksFragment extends Fragment {
         // 将 LinearLayoutManager 的方向设置为垂直
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
-        general_tasks = new ArrayList<>();
-        general_tasks.add(new Tasks("准时睡觉",100));
-        general_tasks.add(new Tasks("看青年大学习",20));
-        general_tasks.add(new Tasks("锻炼",10));
+        general_tasks = new DataGeneralTasks().LoadTasks(this.getContext());
         tasksAdapter = new GeneralTasksFragment.TasksAdapter(general_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
         registerForContextMenu(tasksRecyclerView);

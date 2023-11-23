@@ -1,5 +1,6 @@
 package com.jnu.student.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,10 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.jnu.student.R;
 
 public class ButtonTasksFragment extends Fragment {
+    private Fragment daily_tasks =  new DailyTasksFragment();
+    private Fragment weekly_tasks = new WeeklyTasksFragment();
+    private Fragment general_tasks = new GeneralTasksFragment();
+    private Fragment dungeon_tasks = new DungeonTasksFragment();
     private String []tabHeaderStrings = {"每日任务","每周任务","普通任务","副本任务","已完成","成就点数"};
     public ButtonTasksFragment() {
         // Required empty public constructor
@@ -28,7 +33,6 @@ public class ButtonTasksFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,13 +69,13 @@ public class ButtonTasksFragment extends Fragment {
             // 根据位置返回对应的Fragment实例
             switch (position) {
                 case 0:
-                    return new DailyTasksFragment();
+                    return daily_tasks;
                 case 1:
-                    return new WeeklyTasksFragment();
+                    return weekly_tasks;
                 case 2:
-                    return new GeneralTasksFragment();
+                    return general_tasks;
                 case 3:
-                    return new DungeonTasksFragment();
+                    return dungeon_tasks;
                 default:
                     return null;
             }

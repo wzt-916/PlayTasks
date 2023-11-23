@@ -37,16 +37,24 @@
 
 <img src="image/11.png" style="zoom:50%;" />
 
+## Playtask功能
+
+##### Playtask功能：实现添加任务功能
+
+<img src="image/13.png" style="zoom:50%;" />
+
 ## 错误记录
 
-1. 实现底部导航栏
+#### **实现底部导航栏**
 
-   在 `switch` 语句中处理底部导航栏的 ID 出现错误，可能是由于 ID 不匹配或者处理逻辑出现了问题：
+在 `switch` 语句中处理底部导航栏的 ID 出现错误，可能是由于 ID 不匹配或者处理逻辑出现了问题：
 
-   ![](image/3.png)
+![](image/3.png)
 
-   将switch语句改成if语句即可：
+将switch语句改成if语句即可：
 
-   ![](image/4.jpg)
+#### <img src="image/4.jpg" style="zoom: 50%;" />字符串比较
 
-   
+在Java中，字符串比较时应该使用`equals()`方法而不是`==`运算符。`==`比较的是对象的引用是否相同，而`equals()`比较的是字符串的内容是否相同。
+
+<img src="image/12.jpg" style="zoom: 50%;" />

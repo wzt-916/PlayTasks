@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jnu.student.R;
+import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataWeeklyTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
@@ -53,10 +55,7 @@ public class WeeklyTasksFragment extends Fragment {
         // 将 LinearLayoutManager 的方向设置为垂直
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
-        weekly_tasks = new ArrayList<>();
-        weekly_tasks.add(new Tasks("读完一本书",100));
-        weekly_tasks.add(new Tasks("去外面吃饭",20));
-        weekly_tasks.add(new Tasks("去外面吃饭",20));
+        weekly_tasks = new DataWeeklyTasks().LoadTasks(this.getContext());
         tasksAdapter = new WeeklyTasksFragment.TasksAdapter(weekly_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
         registerForContextMenu(tasksRecyclerView);

@@ -1,5 +1,6 @@
 package com.jnu.student.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jnu.student.R;
+import com.jnu.student.data.DataDailyTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
@@ -26,7 +28,15 @@ public class DailyTasksFragment extends Fragment {
     public DailyTasksFragment() {
         // Required empty public constructor
     }
-
+    public void Change_Tasks(Intent data) {
+        // Required empty public constructor
+        int score = Integer.parseInt(data.getStringExtra("score"));
+        String title = data.getStringExtra("title");
+        String tags = data.getStringExtra("tags");
+        daily_tasks.add(new Tasks(title,score));
+        tasksAdapter.notifyItemInserted(daily_tasks.size());
+        new DataDailyTasks().SaveTasks(this.getContext(),daily_tasks);
+    }
     public static DailyTasksFragment newInstance(String param1, String param2) {
         DailyTasksFragment fragment = new DailyTasksFragment();
         Bundle args = new Bundle();
@@ -40,7 +50,6 @@ public class DailyTasksFragment extends Fragment {
         if (getArguments() != null) {
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,15 +63,18 @@ public class DailyTasksFragment extends Fragment {
         // 将 LinearLayoutManager 的方向设置为垂直
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
-        daily_tasks = new ArrayList<>();
-        daily_tasks.add(new Tasks("看书",-10));
-        daily_tasks.add(new Tasks("打代码",10));
-        daily_tasks.add(new Tasks("锻炼",10));
+        daily_tasks = new DataDailyTasks().LoadTasks(this.getContext());
+        if(daily_tasks.size() == 0) {
+            daily_tasks.add(new Tasks("看书", -10));
+            daily_tasks.add(new Tasks("打代码", 10));
+            daily_tasks.add(new Tasks("锻炼", 10));
+        }
         tasksAdapter = new TasksAdapter(daily_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
         registerForContextMenu(tasksRecyclerView);
         return rootView;
     }
+
     public class TasksAdapter extends RecyclerView.Adapter<DailyTasksFragment.TasksAdapter.ViewHolder> {
 
         private ArrayList<Tasks> tasksArrayList;

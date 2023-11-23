@@ -2878,6 +2878,15 @@ int id action_text 0x7f080043
 int id actions 0x7f080044
 int id activity_chooser_view_content 0x7f080045
 int id add 0x7f080046
+int id add_tasks_details_Button_Daily 0x7f080210
+int id add_tasks_details_Button_Regular 0x7f080211
+int id add_tasks_details_Button_Weekly 0x7f080212
+int id add_tasks_details_Group_Frequency 0x7f080213
+int id add_tasks_details_cancel 0x7f080214
+int id add_tasks_details_edit_Score 0x7f080215
+int id add_tasks_details_edit_Tags 0x7f080216
+int id add_tasks_details_edit_Title 0x7f080217
+int id add_tasks_details_ok 0x7f080218
 int id alertTitle 0x7f080047
 int id aligned 0x7f080048
 int id all 0x7f080049
@@ -2909,7 +2918,6 @@ int id bounceStart 0x7f080062
 int id btn_msg 0x7f0801f5
 int id butto_Cancel 0x7f080209
 int id buttonPanel 0x7f080063
-int id button_Create_Task 0x7f080202
 int id button_Layout 0x7f08020a
 int id button_OK 0x7f08020b
 int id button_view_pager 0x7f080064
@@ -2986,9 +2994,6 @@ int id easeIn 0x7f0800a9
 int id easeInOut 0x7f0800aa
 int id easeOut 0x7f0800ab
 int id east 0x7f0800ac
-int id edit_Text_Score 0x7f080203
-int id edit_Text_Tags 0x7f08020f
-int id edit_Text_Title 0x7f080204
 int id edit_query 0x7f0800ad
 int id elastic 0x7f0800ae
 int id embed 0x7f0800af
@@ -3163,11 +3168,7 @@ int id pressed 0x7f080156
 int id progress_circular 0x7f080157
 int id progress_horizontal 0x7f080158
 int id radio 0x7f080159
-int id radio_Button_Daily 0x7f080205
-int id radio_Button_Regular 0x7f080206
-int id radio_Button_Weekly 0x7f080207
 int id radio_Group 0x7f08020c
-int id radio_Group_Frequency 0x7f080208
 int id radio_Junior 0x7f08020d
 int id radio_Senior 0x7f08020e
 int id ratio 0x7f08015a

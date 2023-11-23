@@ -2879,6 +2879,15 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_tasks_details_Button_Daily
+id add_tasks_details_Button_Regular
+id add_tasks_details_Button_Weekly
+id add_tasks_details_Group_Frequency
+id add_tasks_details_cancel
+id add_tasks_details_edit_Score
+id add_tasks_details_edit_Tags
+id add_tasks_details_edit_Title
+id add_tasks_details_ok
 id alertTitle
 id aligned
 id all
@@ -2910,7 +2919,6 @@ id bounceStart
 id btn_msg
 id butto_Cancel
 id buttonPanel
-id button_Create_Task
 id button_Layout
 id button_OK
 id button_view_pager
@@ -2987,9 +2995,6 @@ id easeIn
 id easeInOut
 id easeOut
 id east
-id edit_Text_Score
-id edit_Text_Tags
-id edit_Text_Title
 id edit_query
 id elastic
 id embed
@@ -3164,11 +3169,7 @@ id pressed
 id progress_circular
 id progress_horizontal
 id radio
-id radio_Button_Daily
-id radio_Button_Regular
-id radio_Button_Weekly
 id radio_Group
-id radio_Group_Frequency
 id radio_Junior
 id radio_Senior
 id ratio

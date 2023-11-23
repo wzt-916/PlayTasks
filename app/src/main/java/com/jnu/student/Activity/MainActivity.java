@@ -18,20 +18,27 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.jnu.student.Fragment.ButtonTasksFragment;
 import com.jnu.student.Fragment.DailyTasksFragment;
 import com.jnu.student.R;
+import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataGeneralTasks;
+import com.jnu.student.data.DataWeeklyTasks;
+import com.jnu.student.data.Tasks;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private Fragment tasksFragment = new ButtonTasksFragment();//任务
+    private Fragment statisticsFragment = new DailyTasksFragment();//统计
     private BottomNavigationView btmNavView;
     // 声明一个用于启动带有返回结果的活动的管理器(添加任务)
-    ActivityResultLauncher<Intent> addTasksLauncher;
+    private ActivityResultLauncher<Intent> addTasksLauncher;
     // 声明一个用于启动带有返回结果的活动的管理器(加入副本)
-    ActivityResultLauncher<Intent> addDungeonLauncher;
+    private ActivityResultLauncher<Intent> addDungeonLauncher;
     // 声明一个用于启动带有返回结果的活动的管理器(排序)
-    ActivityResultLauncher<Intent> SortLauncher;
+    private ActivityResultLauncher<Intent> SortLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bottom_navegation);
-
         // 第一次加载，显示任务页面
         if (savedInstanceState == null) {
             Fragment tasksFragment = new ButtonTasksFragment();
@@ -42,7 +49,31 @@ public class MainActivity extends AppCompatActivity {
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     if(result.getResultCode() == Activity.RESULT_OK){
-
+                        Intent data = result.getData();
+                        String tasks_type = data.getStringExtra("task_type");
+                        if("daily".equals(tasks_type)) //每日任务
+                        {
+                            ArrayList<Tasks> daily_tasks = new DataDailyTasks().LoadTasks(this);
+                            int score = Integer.parseInt(data.getStringExtra("score"));
+                            String title = data.getStringExtra("title");
+                            String tags = data.getStringExtra("tags");
+                            daily_tasks.add(new Tasks(title,score));
+                            new DataDailyTasks().SaveTasks(this,daily_tasks);
+                        } else if ("weekly".equals(tasks_type)) { //每周任务
+                            ArrayList<Tasks> weekly_tasks = new DataWeeklyTasks().LoadTasks(this);
+                            int score = Integer.parseInt(data.getStringExtra("score"));
+                            String title = data.getStringExtra("title");
+                            String tags = data.getStringExtra("tags");
+                            weekly_tasks.add(new Tasks(title,score));
+                            new DataWeeklyTasks().SaveTasks(this,weekly_tasks);
+                        } else if ("regular".equals(tasks_type)) { //普通任务
+                            ArrayList<Tasks> general_tasks = new DataGeneralTasks().LoadTasks(this);
+                            int score = Integer.parseInt(data.getStringExtra("score"));
+                            String title = data.getStringExtra("title");
+                            String tags = data.getStringExtra("tags");
+                            general_tasks.add(new Tasks(title,score));
+                            new DataGeneralTasks().SaveTasks(this,general_tasks);
+                        }
                     } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
 
                     }
@@ -76,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
             // 处理底部导航栏项的选择
             if (item.getItemId() == R.id.navigation_tasks) {
                 // 用户点击了“任务”，加载ButtonTasksFragment
-                Fragment tasksFragment = new ButtonTasksFragment();
                 loadTasksFragment(tasksFragment);
                 return true;
             }
@@ -85,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
             if (item.getItemId() == R.id.navigation_statistics) {
-                // 用户点击了“统计”，这里可以添加对应逻辑
-                Fragment statisticsFragment = new DailyTasksFragment();
+                // 用户点击了“统计”
                 loadTasksFragment(statisticsFragment);
                 return true;
             }
