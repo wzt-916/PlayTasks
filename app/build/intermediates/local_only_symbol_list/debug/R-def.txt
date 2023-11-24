@@ -31,6 +31,7 @@ id button_OK
 id button_view_pager
 id checkBox
 id fragment_container
+id largeText
 id navigation_home
 id navigation_reward
 id navigation_statistics
@@ -44,6 +45,8 @@ id recycl_weekly
 id recycle_daily
 id recyclerview_main
 id tab_layout
+id textView
+id textView2
 id text_view_score
 id text_view_tasks_title
 layout activity_add_dungeon
@@ -53,6 +56,7 @@ layout add_tasks_details
 layout fragment_daily_tasks
 layout fragment_dungeon_tasks
 layout fragment_general_tasks
+layout fragment_score
 layout fragment_tab_tasks
 layout fragment_tasks_list
 layout fragment_weekly_tasks

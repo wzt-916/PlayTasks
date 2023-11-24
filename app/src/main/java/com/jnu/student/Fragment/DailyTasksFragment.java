@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,7 @@ import com.jnu.student.data.Tasks;
 import java.util.ArrayList;
 
 public class DailyTasksFragment extends Fragment {
+    public static int daily_score = 0;
     private RecyclerView tasksRecyclerView;
     private DailyTasksFragment.TasksAdapter tasksAdapter;
 
@@ -132,6 +135,7 @@ public class DailyTasksFragment extends Fragment {
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
             private final TextView textViewTitle;
             private final TextView textViewScore;
+            private final CheckBox checkBox;
 
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v,
@@ -148,7 +152,23 @@ public class DailyTasksFragment extends Fragment {
 
                 textViewTitle = tasksView.findViewById(R.id.text_view_tasks_title);
                 textViewScore = tasksView.findViewById(R.id.text_view_score);
+                checkBox = tasksView.findViewById(R.id.checkBox); // 初始化 CheckBox
                 tasksView.setOnCreateContextMenuListener(this);
+                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        // 在这里处理 CheckBox 被点击时的逻辑
+                        if (isChecked) {
+                            TextView scoreTextView = getTextViewScore();
+                            int score = Integer.parseInt(scoreTextView.getText().toString());
+                            // CheckBox 被选中时的逻辑
+                            Toast.makeText(getContext(), "任务点数" + score, Toast.LENGTH_SHORT).show();
+                            buttonView.setChecked(false);
+                            // 可以执行其他操作，例如修改数据等
+                        } else {
+                            // CheckBox 被取消选中时的逻辑
+                        }
+                    }
+                });
             }
 
             public TextView getTextViewTitle() {
@@ -160,7 +180,6 @@ public class DailyTasksFragment extends Fragment {
             }
 
         }
-
         public TasksAdapter(ArrayList<Tasks> tasks) {
             tasksArrayList = tasks;
         }
@@ -183,9 +202,10 @@ public class DailyTasksFragment extends Fragment {
         }
 
         // Return the size of your dataset (invoked by the layout manager)
-        @Override
         public int getItemCount() {
             return tasksArrayList.size();
         }
+        // 添加 CheckBox 的点击事件监听器
     }
+
 }

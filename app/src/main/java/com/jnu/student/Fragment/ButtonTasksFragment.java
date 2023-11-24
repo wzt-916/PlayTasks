@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -21,6 +22,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.jnu.student.R;
 
 public class ButtonTasksFragment extends Fragment {
+    private static int score;
     private Fragment daily_tasks =  new DailyTasksFragment();
     private Fragment weekly_tasks = new WeeklyTasksFragment();
     private Fragment general_tasks = new GeneralTasksFragment();
@@ -49,10 +51,12 @@ public class ButtonTasksFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_tab_tasks, container, false);
         ViewPager2 viewPager = root.findViewById(R.id.button_view_pager);
         TabLayout tabLayout = root.findViewById(R.id.tab_layout);
+        TextView textView = root.findViewById(R.id.textView);
+        score = 10;
+        textView.setText(String.valueOf(score));
         // 创建适配器
         FragmentAdapter fragmentAdapter = new FragmentAdapter(getActivity().getSupportFragmentManager(), getLifecycle());
         viewPager.setAdapter(fragmentAdapter);
-
         // 将TabLayout和ViewPager2进行关联
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> tab.setText(tabHeaderStrings[position])
