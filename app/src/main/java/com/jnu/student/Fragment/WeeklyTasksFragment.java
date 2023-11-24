@@ -13,17 +13,18 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jnu.student.R;
-import com.jnu.student.data.DataDailyTasks;
 import com.jnu.student.data.DataWeeklyTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
 
 public class WeeklyTasksFragment extends Fragment {
+    public static int daily_score = 0;
     private RecyclerView tasksRecyclerView;
     private WeeklyTasksFragment.TasksAdapter tasksAdapter;
 
@@ -51,9 +52,9 @@ public class WeeklyTasksFragment extends Fragment {
                              Bundle savedInstanceState) {
         // 通过提供的 inflater 将 fragment_book_list 布局实例化为视图
         // rootView 将包含 fragment_book_list.xml 中定义的视图
-        View rootView = inflater.inflate(R.layout.fragment_weekly_tasks, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tasks_list, container, false);
         // 从实例化的布局中查找具有特定 ID（R.id.recyclerview_main）的 RecyclerView
-        tasksRecyclerView = rootView.findViewById(R.id.recycl_weekly);
+        tasksRecyclerView = rootView.findViewById(R.id.recyclerview_main);
         // 创建一个 LinearLayoutManager 来管理 RecyclerView 中的项目
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
         // 将 LinearLayoutManager 的方向设置为垂直
@@ -68,6 +69,8 @@ public class WeeklyTasksFragment extends Fragment {
         tasksAdapter = new WeeklyTasksFragment.TasksAdapter(weekly_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
         registerForContextMenu(tasksRecyclerView);
+
+
         return rootView;
     }
     public boolean onContextItemSelected(MenuItem item) {
@@ -122,6 +125,7 @@ public class WeeklyTasksFragment extends Fragment {
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
             private final TextView textViewTitle;
             private final TextView textViewScore;
+            private final CheckBox checkBox;
 
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v,
@@ -138,6 +142,26 @@ public class WeeklyTasksFragment extends Fragment {
 
                 textViewTitle = tasksView.findViewById(R.id.text_view_tasks_title);
                 textViewScore = tasksView.findViewById(R.id.text_view_score);
+                checkBox = tasksView.findViewById(R.id.checkBox); // 初始化 CheckBox
+                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        // 在这里处理 CheckBox 被点击时的逻辑
+                        if (isChecked) {
+                            TextView scoreTextView = getTextViewScore();
+                            daily_score = Integer.parseInt(scoreTextView.getText().toString());
+                            // CheckBox 被选中时的逻辑
+                            //Toast.makeText(getContext(), daily_score+"", Toast.LENGTH_SHORT).show();
+                            buttonView.setChecked(false);
+                            if (getActivity() != null) {
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("weeklyScore", daily_score);
+                                getParentFragmentManager().setFragmentResult("updateScore", bundle);
+                            }
+                        } else {
+                            // CheckBox 被取消选中时的逻辑
+                        }
+                    }
+                });
                 tasksView.setOnCreateContextMenuListener(this);
             }
 

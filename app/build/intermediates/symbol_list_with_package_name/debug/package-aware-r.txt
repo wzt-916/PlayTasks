@@ -2918,10 +2918,12 @@ id bounceEnd
 id bounceStart
 id btn_msg
 id butto_Cancel
+id button3
 id buttonPanel
 id button_Layout
 id button_OK
 id button_view_pager
+id button_zero
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2997,6 +2999,8 @@ id east
 id edit_query
 id elastic
 id embed
+id empty_textView1
+id empty_textView2
 id end
 id endToStart
 id enterAlways
@@ -3053,7 +3057,6 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
-id largeText
 id layout
 id left
 id leftToRight
@@ -3176,7 +3179,6 @@ id ratio
 id rectangles
 id recycl_dungeon
 id recycl_general
-id recycl_weekly
 id recycle_daily
 id recyclerview_main
 id reverseSawtooth
@@ -3190,6 +3192,8 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id score_text
+id score_to_zero
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3285,6 +3289,7 @@ id textStart
 id textTop
 id textView
 id textView2
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3461,13 +3466,14 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout empty_tasks
 layout fragment_daily_tasks
 layout fragment_dungeon_tasks
+layout fragment_finish_tasks
 layout fragment_general_tasks
 layout fragment_score
 layout fragment_tab_tasks
 layout fragment_tasks_list
-layout fragment_weekly_tasks
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3704,6 +3710,7 @@ string status_bar_notification_info_overflow
 string tags
 string tasks
 string title
+string to_zero
 string weekly
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

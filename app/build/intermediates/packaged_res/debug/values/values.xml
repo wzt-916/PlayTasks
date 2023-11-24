@@ -22,6 +22,7 @@
     <string name="tags">标签</string>
     <string name="tasks">任务</string>
     <string name="title">标题</string>
+    <string name="to_zero">归零</string>
     <string name="weekly">每周</string>
     <style name="CustomTabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabIndicatorColor">@color/teal_200</item>

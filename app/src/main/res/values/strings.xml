@@ -16,4 +16,5 @@
     <string name="weekly">每周</string>
     <string name="regular">普通</string>
     <string name="tags">标签</string>
+    <string name="to_zero">归零</string>
 </resources>

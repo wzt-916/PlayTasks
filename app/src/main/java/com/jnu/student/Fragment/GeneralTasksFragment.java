@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +26,7 @@ import com.jnu.student.data.Tasks;
 import java.util.ArrayList;
 public class GeneralTasksFragment extends Fragment {
     private RecyclerView tasksRecyclerView;
+    public static int daily_score = 0;
     private GeneralTasksFragment.TasksAdapter tasksAdapter;
 
     private ArrayList<Tasks> general_tasks;
@@ -116,6 +119,7 @@ public class GeneralTasksFragment extends Fragment {
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
             private final TextView textViewTitle;
             private final TextView textViewScore;
+            private final CheckBox checkBox;
 
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v,
@@ -133,6 +137,26 @@ public class GeneralTasksFragment extends Fragment {
                 textViewTitle = tasksView.findViewById(R.id.text_view_tasks_title);
                 textViewScore = tasksView.findViewById(R.id.text_view_score);
                 tasksView.setOnCreateContextMenuListener(this);
+                checkBox = tasksView.findViewById(R.id.checkBox); // 初始化 CheckBox
+                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        // 在这里处理 CheckBox 被点击时的逻辑
+                        if (isChecked) {
+                            TextView scoreTextView = getTextViewScore();
+                            daily_score = Integer.parseInt(scoreTextView.getText().toString());
+                            // CheckBox 被选中时的逻辑
+                            //Toast.makeText(getContext(), daily_score+"", Toast.LENGTH_SHORT).show();
+                            buttonView.setChecked(false);
+                            if (getActivity() != null) {
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("generalScore", daily_score);
+                                getParentFragmentManager().setFragmentResult("updateScore", bundle);
+                            }
+                        } else {
+                            // CheckBox 被取消选中时的逻辑
+                        }
+                    }
+                });
             }
 
             public TextView getTextViewTitle() {

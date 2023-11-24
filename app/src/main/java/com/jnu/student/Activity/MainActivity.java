@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                             String tags = data.getStringExtra("tags");
                             daily_tasks.add(new Tasks(title,score));
                             new DataDailyTasks().SaveTasks(this,daily_tasks);
+                            loadTasksFragment(new ButtonTasksFragment());
                         } else if ("weekly".equals(tasks_type)) { //每周任务
                             ArrayList<Tasks> weekly_tasks = new DataWeeklyTasks().LoadTasks(this);
                             int score = Integer.parseInt(data.getStringExtra("score"));
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                             String tags = data.getStringExtra("tags");
                             weekly_tasks.add(new Tasks(title,score));
                             new DataWeeklyTasks().SaveTasks(this,weekly_tasks);
+                            loadTasksFragment(new ButtonTasksFragment(1));
                         } else if ("regular".equals(tasks_type)) { //普通任务
                             ArrayList<Tasks> general_tasks = new DataGeneralTasks().LoadTasks(this);
                             int score = Integer.parseInt(data.getStringExtra("score"));
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                             String tags = data.getStringExtra("tags");
                             general_tasks.add(new Tasks(title,score));
                             new DataGeneralTasks().SaveTasks(this,general_tasks);
+                            loadTasksFragment(new ButtonTasksFragment(2));
                         }
                     } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
 

@@ -49,6 +49,12 @@
 
 ##### Playtask功能：实现删除任务功能
 
+##### Playtask功能：实现完成任务添加点数，统计点数功能
+
+<img src="image/17.png" style="zoom:50%;" />
+
+<img src="image/18.png" style="zoom:50%;" />
+
 ## 错误记录
 
 #### **实现底部导航栏**

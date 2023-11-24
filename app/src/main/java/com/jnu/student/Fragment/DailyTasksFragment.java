@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.jnu.student.Activity.AddTasksActivity;
 import com.jnu.student.R;
 import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataFinishTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
@@ -35,15 +36,6 @@ public class DailyTasksFragment extends Fragment {
     private ArrayList<Tasks> daily_tasks;
     public DailyTasksFragment() {
         // Required empty public constructor
-    }
-    public void Change_Tasks(Intent data) {
-        // Required empty public constructor
-        int score = Integer.parseInt(data.getStringExtra("score"));
-        String title = data.getStringExtra("title");
-        String tags = data.getStringExtra("tags");
-        daily_tasks.add(new Tasks(title,score));
-        tasksAdapter.notifyItemInserted(daily_tasks.size());
-        new DataDailyTasks().SaveTasks(this.getContext(),daily_tasks);
     }
     public static DailyTasksFragment newInstance(String param1, String param2) {
         DailyTasksFragment fragment = new DailyTasksFragment();
@@ -159,10 +151,19 @@ public class DailyTasksFragment extends Fragment {
                         // 在这里处理 CheckBox 被点击时的逻辑
                         if (isChecked) {
                             TextView scoreTextView = getTextViewScore();
-                            int score = Integer.parseInt(scoreTextView.getText().toString());
+                            daily_score = Integer.parseInt(scoreTextView.getText().toString());
+                            //添加到已完成任务
+                            ArrayList<Tasks> finish_task = new DataFinishTasks().LoadTasks(getContext());
+                            finish_task.add(new Tasks(textViewTitle.getText().toString(),daily_score));
+                            new DataFinishTasks().SaveTasks(getContext(),finish_task);
                             // CheckBox 被选中时的逻辑
-                            Toast.makeText(getContext(), "任务点数" + score, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), daily_score+"", Toast.LENGTH_SHORT).show();
                             buttonView.setChecked(false);
+                            if (getActivity() != null) {
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("dailyScore", daily_score);
+                                getParentFragmentManager().setFragmentResult("updateScore", bundle);
+                            }
                             // 可以执行其他操作，例如修改数据等
                         } else {
                             // CheckBox 被取消选中时的逻辑
@@ -207,5 +208,4 @@ public class DailyTasksFragment extends Fragment {
         }
         // 添加 CheckBox 的点击事件监听器
     }
-
 }
