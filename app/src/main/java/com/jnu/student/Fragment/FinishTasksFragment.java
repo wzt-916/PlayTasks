@@ -63,7 +63,6 @@ public class FinishTasksFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
         finish_tasks = new DataFinishTasks().LoadTasks(this.getContext());
-
         if(finish_tasks.size() == 0)
         {
             View root= inflater.inflate(R.layout.empty_tasks, container, false);
@@ -73,7 +72,6 @@ public class FinishTasksFragment extends Fragment {
             textView2.setText("    五星上将麦克阿涛曾经说过,开始就是成功了一半");
             return root;
         }
-
         tasksAdapter = new FinishTasksFragment.TasksAdapter(finish_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
         registerForContextMenu(tasksRecyclerView);
@@ -120,6 +118,7 @@ public class FinishTasksFragment extends Fragment {
                 builder2.create().show();
                 // Do something for item 2
                 break;
+
             default:
                 return super.onContextItemSelected(item);
         }

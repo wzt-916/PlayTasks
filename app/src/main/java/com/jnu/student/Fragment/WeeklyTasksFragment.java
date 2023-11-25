@@ -18,13 +18,14 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.jnu.student.R;
+import com.jnu.student.data.DataFinishTasks;
 import com.jnu.student.data.DataWeeklyTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
 
 public class WeeklyTasksFragment extends Fragment {
-    public static int daily_score = 0;
+    public static int weekly_score = 0;
     private RecyclerView tasksRecyclerView;
     private WeeklyTasksFragment.TasksAdapter tasksAdapter;
 
@@ -61,10 +62,14 @@ public class WeeklyTasksFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
         weekly_tasks = new DataWeeklyTasks().LoadTasks(this.getContext());
-        if(weekly_tasks.size() == 0) {
-            weekly_tasks.add(new Tasks("看书", -10));
-            weekly_tasks.add(new Tasks("打代码", 10));
-            weekly_tasks.add(new Tasks("锻炼", 10));
+        if(weekly_tasks.size() == 0)
+        {
+            View root= inflater.inflate(R.layout.empty_tasks, container, false);
+            TextView textView1 = root.findViewById(R.id.empty_textView1);
+            TextView textView2 = root.findViewById(R.id.empty_textView2);
+            textView1.setText("无每周任务");
+            textView2.setText("    五星上将麦克阿涛曾经说过,开始就是成功了一半");
+            return root;
         }
         tasksAdapter = new WeeklyTasksFragment.TasksAdapter(weekly_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
@@ -139,7 +144,6 @@ public class WeeklyTasksFragment extends Fragment {
             public ViewHolder(View tasksView) {
                 super(tasksView);
                 // Define click listener for the ViewHolder's View
-
                 textViewTitle = tasksView.findViewById(R.id.text_view_tasks_title);
                 textViewScore = tasksView.findViewById(R.id.text_view_score);
                 checkBox = tasksView.findViewById(R.id.checkBox); // 初始化 CheckBox
@@ -148,13 +152,19 @@ public class WeeklyTasksFragment extends Fragment {
                         // 在这里处理 CheckBox 被点击时的逻辑
                         if (isChecked) {
                             TextView scoreTextView = getTextViewScore();
-                            daily_score = Integer.parseInt(scoreTextView.getText().toString());
+                            weekly_score = Integer.parseInt(scoreTextView.getText().toString());
+
+                            //添加到已完成任务
+                            ArrayList<Tasks> finish_task = new DataFinishTasks().LoadTasks(getContext());
+                            finish_task.add(new Tasks(textViewTitle.getText().toString(), weekly_score));
+                            new DataFinishTasks().SaveTasks(getContext(),finish_task);
+
                             // CheckBox 被选中时的逻辑
                             //Toast.makeText(getContext(), daily_score+"", Toast.LENGTH_SHORT).show();
                             buttonView.setChecked(false);
                             if (getActivity() != null) {
                                 Bundle bundle = new Bundle();
-                                bundle.putInt("weeklyScore", daily_score);
+                                bundle.putInt("weeklyScore", weekly_score);
                                 getParentFragmentManager().setFragmentResult("updateScore", bundle);
                             }
                         } else {

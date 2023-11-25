@@ -23,6 +23,7 @@ import com.jnu.student.Fragment.ButtonTasksFragment;
 import com.jnu.student.Fragment.DailyTasksFragment;
 import com.jnu.student.R;
 import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataFinishTasks;
 import com.jnu.student.data.DataGeneralTasks;
 import com.jnu.student.data.DataScore;
 import com.jnu.student.data.DataWeeklyTasks;
@@ -183,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
             popupMenu.getMenu().add("新建任务");
             popupMenu.getMenu().add("加入副本");
             popupMenu.getMenu().add("排序");
+            popupMenu.getMenu().add("全部删除");
             // 设置菜单项点击事件
             popupMenu.setOnMenuItemClickListener(menuItem -> {
                 // 处理菜单项点击事件
@@ -228,7 +230,37 @@ public class MainActivity extends AppCompatActivity {
                             new DataGeneralTasks().SaveTasks(this,generaltask);
                             loadTasksFragment(new ButtonTasksFragment(2));
                         }
-
+                        break;
+                    case "全部删除":
+                        // 处理选项三点击事件
+                        //排序每周任务
+                        if(tabposition == 1)
+                        {
+                            //排序每周任务
+                            ArrayList<Tasks> weekly_tasks = new ArrayList<>();
+                            new DataWeeklyTasks().SaveTasks(this, weekly_tasks);
+                            loadTasksFragment(new ButtonTasksFragment(1));
+                        }
+                        //排序每日任务
+                        if(tabposition == 0)
+                        {
+                            ArrayList<Tasks> daily_tasks = new ArrayList<>();
+                            new DataDailyTasks().SaveTasks(this, daily_tasks);
+                            loadTasksFragment(new ButtonTasksFragment(0));
+                        }
+                        //排序普通任务
+                        if(tabposition == 2)
+                        {
+                            ArrayList<Tasks> general_tasks = new ArrayList<>();
+                            new DataGeneralTasks().SaveTasks(this, general_tasks);
+                            loadTasksFragment(new ButtonTasksFragment(2));
+                        }
+                        if(tabposition == 4)
+                        {
+                            ArrayList<Tasks> finish_tasks = new ArrayList<>();
+                            new DataFinishTasks().SaveTasks(this, finish_tasks);
+                            loadTasksFragment(new ButtonTasksFragment(4));
+                        }
 
                         Toast.makeText(this, "排序成功"+new ButtonTasksFragment().defaultTab, Toast.LENGTH_SHORT).show();
                         return true;

@@ -64,10 +64,14 @@ public class DailyTasksFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
         daily_tasks = new DataDailyTasks().LoadTasks(this.getContext());
-        if(daily_tasks.size() == 0) {
-            daily_tasks.add(new Tasks("看书", -10));
-            daily_tasks.add(new Tasks("打代码", 10));
-            daily_tasks.add(new Tasks("锻炼", 10));
+        if(daily_tasks.size() == 0)
+        {
+            View root= inflater.inflate(R.layout.empty_tasks, container, false);
+            TextView textView1 = root.findViewById(R.id.empty_textView1);
+            TextView textView2 = root.findViewById(R.id.empty_textView2);
+            textView1.setText("无每日任务");
+            textView2.setText("    五星上将麦克阿涛曾经说过,开始就是成功了一半");
+            return root;
         }
         tasksAdapter = new TasksAdapter(daily_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
@@ -134,8 +138,8 @@ public class DailyTasksFragment extends Fragment {
                                             ContextMenu.ContextMenuInfo menuInfo) {
                 menu.setHeaderTitle("具体操作");
 
-                menu.add(0, 0, this.getAdapterPosition(), "添加提醒" + this.getAdapterPosition());
-                menu.add(0, 1, this.getAdapterPosition(), "删除" + this.getAdapterPosition());
+                menu.add(0, 0, this.getAdapterPosition(), "添加提醒");
+                menu.add(0, 1, this.getAdapterPosition(), "删除");
             }
 
             public ViewHolder(View tasksView) {

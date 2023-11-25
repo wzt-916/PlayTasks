@@ -19,14 +19,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jnu.student.R;
-import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataFinishTasks;
 import com.jnu.student.data.DataGeneralTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
 public class GeneralTasksFragment extends Fragment {
     private RecyclerView tasksRecyclerView;
-    public static int daily_score = 0;
+    public static int general_score = 0;
     private GeneralTasksFragment.TasksAdapter tasksAdapter;
 
     private ArrayList<Tasks> general_tasks;
@@ -61,6 +61,15 @@ public class GeneralTasksFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
         general_tasks = new DataGeneralTasks().LoadTasks(this.getContext());
+        if(general_tasks.size() == 0)
+        {
+            View root= inflater.inflate(R.layout.empty_tasks, container, false);
+            TextView textView1 = root.findViewById(R.id.empty_textView1);
+            TextView textView2 = root.findViewById(R.id.empty_textView2);
+            textView1.setText("无普通任务");
+            textView2.setText("    五星上将麦克阿涛曾经说过,开始就是成功了一半");
+            return root;
+        }
         tasksAdapter = new TasksAdapter(general_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
         registerForContextMenu(tasksRecyclerView);
@@ -143,13 +152,19 @@ public class GeneralTasksFragment extends Fragment {
                         // 在这里处理 CheckBox 被点击时的逻辑
                         if (isChecked) {
                             TextView scoreTextView = getTextViewScore();
-                            daily_score = Integer.parseInt(scoreTextView.getText().toString());
+                            general_score = Integer.parseInt(scoreTextView.getText().toString());
+
+                            //添加到已完成任务
+                            ArrayList<Tasks> finish_task = new DataFinishTasks().LoadTasks(getContext());
+                            finish_task.add(new Tasks(textViewTitle.getText().toString(),general_score));
+                            new DataFinishTasks().SaveTasks(getContext(),finish_task);
+
                             // CheckBox 被选中时的逻辑
                             //Toast.makeText(getContext(), daily_score+"", Toast.LENGTH_SHORT).show();
                             buttonView.setChecked(false);
                             if (getActivity() != null) {
                                 Bundle bundle = new Bundle();
-                                bundle.putInt("generalScore", daily_score);
+                                bundle.putInt("generalScore", general_score);
                                 getParentFragmentManager().setFragmentResult("updateScore", bundle);
                             }
                         } else {

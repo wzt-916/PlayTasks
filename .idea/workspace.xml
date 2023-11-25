@@ -22,9 +22,11 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/ButtonTasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/ButtonTasksFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/data/DataDailyTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/data/DataDailyTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/data/Tasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/data/Tasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/DailyTasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/DailyTasksFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/DungeonTasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/DungeonTasksFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/FinishTasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/FinishTasksFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/GeneralTasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/GeneralTasksFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/WeeklyTasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jnu/student/Fragment/WeeklyTasksFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

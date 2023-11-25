@@ -59,9 +59,17 @@ public class DungeonTasksFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(linearLayoutManager);
         dungeon_tasks = new ArrayList<>();
-        dungeon_tasks.add(new Tasks("回家",100));
-        dungeon_tasks.add(new Tasks("去约会",20));
-        dungeon_tasks.add(new Tasks("锻炼",10));
+
+        if(dungeon_tasks.size() == 0)
+        {
+            View root= inflater.inflate(R.layout.empty_tasks, container, false);
+            TextView textView1 = root.findViewById(R.id.empty_textView1);
+            TextView textView2 = root.findViewById(R.id.empty_textView2);
+            textView1.setText("无副本任务");
+            textView2.setText("    五星上将麦克阿涛曾经说过,开始就是成功了一半");
+            return root;
+        }
+
         tasksAdapter = new DungeonTasksFragment.TasksAdapter(dungeon_tasks);
         tasksRecyclerView.setAdapter(tasksAdapter);
         registerForContextMenu(tasksRecyclerView);
