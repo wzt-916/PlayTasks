@@ -10,23 +10,30 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.jnu.student.Fragment.ButtonTasksFragment;
 import com.jnu.student.Fragment.DailyTasksFragment;
 import com.jnu.student.R;
 import com.jnu.student.data.DataDailyTasks;
 import com.jnu.student.data.DataGeneralTasks;
+import com.jnu.student.data.DataScore;
 import com.jnu.student.data.DataWeeklyTasks;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     private Fragment tasksFragment = new ButtonTasksFragment();//任务
+    private int tabposition;
     private Fragment statisticsFragment = new DailyTasksFragment();//统计
     private BottomNavigationView btmNavView;
     // 声明一个用于启动带有返回结果的活动的管理器(添加任务)
@@ -128,6 +135,22 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+        // 获取 FragmentManager
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        // 注册 FragmentResultListener
+        fragmentManager.setFragmentResultListener("tabposition", this,
+                new FragmentResultListener() {
+                    @Override
+                    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                        // 获取从 Fragment 传来的数据
+                        int position = result.getInt("position", tabposition);
+                        tabposition = position;
+                        // 在这里处理获取到的标签页位置信息
+                        // 可以根据需要做一些操作
+                        //Toast.makeText(MainActivity.this, "获取到的标签页位置：" + position, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     // 加载Fragment的方法
@@ -146,6 +169,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+        // 这里可以接收来自 Fragment 的结果，但你已经在 onCreate 中注册了 FragmentResultListener，所以这个方法不需要重写
+    }
     @Override
     //点击添加按钮
     public boolean onOptionsItemSelected(MenuItem item){
@@ -177,7 +203,34 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case "排序":
                         // 处理选项三点击事件
-                        Toast.makeText(this, "排序成功", Toast.LENGTH_SHORT).show();
+                        //排序每周任务
+                        if(tabposition == 1)
+                        {
+                            //排序每周任务
+                            ArrayList<Tasks> weeklytask = new DataWeeklyTasks().LoadTasks(this);
+                            Collections.sort(weeklytask);
+                            new DataWeeklyTasks().SaveTasks(this,weeklytask);
+                            loadTasksFragment(new ButtonTasksFragment(1));
+                        }
+                        //排序每日任务
+                        if(tabposition == 0)
+                        {
+                            ArrayList<Tasks> dailytask = new DataDailyTasks().LoadTasks(this);
+                            Collections.sort(dailytask);
+                            new DataDailyTasks().SaveTasks(this,dailytask);
+                            loadTasksFragment(new ButtonTasksFragment(0));
+                        }
+                        //排序普通任务
+                        if(tabposition == 2)
+                        {
+                            ArrayList<Tasks> generaltask = new DataGeneralTasks().LoadTasks(this);
+                            Collections.sort(generaltask);
+                            new DataGeneralTasks().SaveTasks(this,generaltask);
+                            loadTasksFragment(new ButtonTasksFragment(2));
+                        }
+
+
+                        Toast.makeText(this, "排序成功"+new ButtonTasksFragment().defaultTab, Toast.LENGTH_SHORT).show();
                         return true;
                 }
                 return false;

@@ -1,5 +1,6 @@
 package com.jnu.student.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 
 public class ButtonTasksFragment extends Fragment {
     private static int score;
-    private int defaultTab = 0;
+    public int defaultTab = 0;
     private Fragment daily_tasks =  new DailyTasksFragment();
     private Fragment weekly_tasks = new WeeklyTasksFragment();
     private Fragment general_tasks = new GeneralTasksFragment();
@@ -111,6 +112,21 @@ public class ButtonTasksFragment extends Fragment {
         ).attach();
         // 获取默认标签页
         viewPager.setCurrentItem(defaultTab);
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                TabLayout.Tab tab = tabLayout.getTabAt(position);
+                if (tab != null) {
+                    if (getActivity() != null) {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("position", position);
+                        getParentFragmentManager().setFragmentResult("tabposition", bundle);
+                    }
+                    // 在这里你可以对当前标签页进行操作
+                }
+            }
+        });
         return root;
     }
     public class FragmentAdapter extends FragmentStateAdapter {
