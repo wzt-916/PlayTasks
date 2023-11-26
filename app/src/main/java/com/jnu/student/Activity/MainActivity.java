@@ -21,10 +21,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.jnu.student.Fragment.ButtonTasksFragment;
 import com.jnu.student.Fragment.DailyTasksFragment;
+import com.jnu.student.Fragment.HomeFragment;
+import com.jnu.student.Fragment.RewardFragment;
 import com.jnu.student.R;
 import com.jnu.student.data.DataDailyTasks;
 import com.jnu.student.data.DataFinishTasks;
 import com.jnu.student.data.DataGeneralTasks;
+import com.jnu.student.data.DataRewardTasks;
 import com.jnu.student.data.DataScore;
 import com.jnu.student.data.DataWeeklyTasks;
 import com.jnu.student.data.Tasks;
@@ -33,12 +36,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
-    private Fragment tasksFragment = new ButtonTasksFragment();//任务
     private int tabposition;
+    private int mymenu;
     private Fragment statisticsFragment = new DailyTasksFragment();//统计
     private BottomNavigationView btmNavView;
     // 声明一个用于启动带有返回结果的活动的管理器(添加任务)
     private ActivityResultLauncher<Intent> addTasksLauncher;
+    private ActivityResultLauncher<Intent> addRewardLauncher;
     // 声明一个用于启动带有返回结果的活动的管理器(加入副本)
     private ActivityResultLauncher<Intent> addDungeonLauncher;
     // 声明一个用于启动带有返回结果的活动的管理器(排序)
@@ -90,6 +94,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        //处理新建奖励
+        addRewardLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        Intent data = result.getData();
+                        ArrayList<Tasks> reward_tasks = new DataRewardTasks().LoadTasks(this);
+                        int score = Integer.parseInt(data.getStringExtra("reward_score"));
+                        String title = data.getStringExtra("reward_title");
+                        String tags = data.getStringExtra("reward_tags");
+                        reward_tasks.add(new Tasks(title,-score));
+                        new DataRewardTasks().SaveTasks(this,reward_tasks);
+                        loadTasksFragment(new RewardFragment());
+                    } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
+
+                    }
+                }
+        );
+
         // 为启动带有返回结果的活动(Activity)注册一个处理程序(添加副本)
         addDungeonLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -118,11 +141,15 @@ public class MainActivity extends AppCompatActivity {
             // 处理底部导航栏项的选择
             if (item.getItemId() == R.id.navigation_tasks) {
                 // 用户点击了“任务”，加载ButtonTasksFragment
+                Fragment tasksFragment = new ButtonTasksFragment();//任务
                 loadTasksFragment(tasksFragment);
+                mymenu = 0;
                 return true;
             }
             if (item.getItemId() == R.id.navigation_home) {
                 // 用户点击了“首页”
+                Fragment homeFragment = new HomeFragment();
+                loadTasksFragment(homeFragment);
                 return true;
             }
             if (item.getItemId() == R.id.navigation_statistics) {
@@ -131,7 +158,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
             if (item.getItemId() == R.id.navigation_reward) {
-                // 用户点击了“奖励”，加载DailyTasksFragment
+                Fragment rewardFragment = new RewardFragment();
+                loadTasksFragment(rewardFragment);
+                mymenu = 1;
                 return true;
             }
             return false;
@@ -176,10 +205,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     //点击添加按钮
     public boolean onOptionsItemSelected(MenuItem item){
-        if(item.getItemId() == R.id.btn_msg)
+        if(item.getItemId() == R.id.tasks_msg && mymenu == 0)
         {
             // 创建一个 PopupMenu
-            PopupMenu popupMenu = new PopupMenu(this, findViewById(R.id.btn_msg));
+            PopupMenu popupMenu = new PopupMenu(this, findViewById(R.id.tasks_msg));
             // 在菜单中添加选项
             popupMenu.getMenu().add("新建任务");
             popupMenu.getMenu().add("加入副本");
@@ -264,6 +293,40 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(this, "排序成功"+new ButtonTasksFragment().defaultTab, Toast.LENGTH_SHORT).show();
                         return true;
+                }
+                return false;
+            });
+            // 显示 PopupMenu
+            popupMenu.show();
+            return true;
+        }
+        if(item.getItemId() == R.id.tasks_msg && mymenu == 1)
+        {
+            // 创建一个 PopupMenu
+            PopupMenu popupMenu = new PopupMenu(this, findViewById(R.id.tasks_msg));
+            // 在菜单中添加选项
+            popupMenu.getMenu().add("新建奖励");
+            popupMenu.getMenu().add("排序");
+            popupMenu.getMenu().add("全部删除");
+            // 设置菜单项点击事件
+            popupMenu.setOnMenuItemClickListener(menuItem -> {
+                // 处理菜单项点击事件
+                switch (menuItem.getTitle().toString()) {
+                    case "新建奖励":
+                        // 处理选项一点击事件
+                        Intent reward_intent = new Intent(this, addRewardActivity.class);
+                        // 使用 addTasksLauncher 启动指定的 Intent
+                        addRewardLauncher.launch(reward_intent);
+                        return true;
+                    case "排序":
+                        ArrayList<Tasks> reward_tasks_sort= new DataRewardTasks().LoadTasks(this);
+                        Collections.sort(reward_tasks_sort);
+                        new DataRewardTasks().SaveTasks(this,reward_tasks_sort);
+                        break;
+                    case "全部删除":
+                        ArrayList<Tasks> reward_tasks = new ArrayList<>();
+                        new DataRewardTasks().SaveTasks(this,reward_tasks);
+                        loadTasksFragment(new RewardFragment());
                 }
                 return false;
             });

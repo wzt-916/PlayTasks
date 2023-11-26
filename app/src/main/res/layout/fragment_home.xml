@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 用户名和头像 -->
+    <LinearLayout
+        android:id="@+id/userInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:clickable="true"
+        android:onClick="onUserInfoClick">
+
+        <ImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/avatar"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tao"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- 我的钱包 -->
+    <TextView
+        android:id="@+id/walletTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我的钱包"
+        android:padding="16dp"
+        android:clickable="true"
+        android:onClick="onWalletClick"
+        android:textStyle="bold"
+        android:layout_below="@id/userInfoLayout"/>
+
+    <!-- 副本设置 -->
+    <TextView
+        android:id="@+id/settingsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="副本设置"
+        android:padding="16dp"
+        android:clickable="true"
+        android:onClick="onSettingsClick"
+        android:textStyle="bold"
+        android:layout_below="@id/walletTextView"/>
+
+    <!-- 退出登录 -->
+    <TextView
+        android:id="@+id/logoutTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:layout_below="@id/settingsTextView"/>
+
+    <!-- 帮助 -->
+    <TextView
+        android:id="@+id/helpTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="帮助"
+        android:padding="16dp"
+        android:clickable="true"
+        android:onClick="onHelpClick"
+        android:textStyle="bold"
+        android:layout_below="@id/logoutTextView"/>
+
+    <!-- 检查更新 -->
+    <TextView
+        android:id="@+id/checkUpdateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="检查更新"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:layout_below="@id/helpTextView"/>
+
+    <!-- 请作者喝奶茶 -->
+    <TextView
+        android:id="@+id/buyTeaTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请啊涛喝奶茶"
+        android:padding="16dp"
+        android:clickable="true"
+        android:onClick="onBuyTeaClick"
+        android:textStyle="bold"
+        android:layout_below="@id/checkUpdateTextView"/>
+
+
+</RelativeLayout>

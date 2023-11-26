@@ -55,9 +55,9 @@ public class DailyTasksFragment extends Fragment {
                              Bundle savedInstanceState) {
         // 通过提供的 inflater 将 fragment_book_list 布局实例化为视图
         // rootView 将包含 fragment_book_list.xml 中定义的视图
-        View rootView = inflater.inflate(R.layout.fragment_daily_tasks, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tasks_list, container, false);
         // 从实例化的布局中查找具有特定 ID（R.id.recyclerview_main）的 RecyclerView
-        tasksRecyclerView = rootView.findViewById(R.id.recycle_daily);
+        tasksRecyclerView = rootView.findViewById(R.id.recyclerview_main);
         // 创建一个 LinearLayoutManager 来管理 RecyclerView 中的项目
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext());
         // 将 LinearLayoutManager 的方向设置为垂直

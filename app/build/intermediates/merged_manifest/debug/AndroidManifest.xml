@@ -37,6 +37,21 @@
         android:theme="@style/Theme.MyFirstApplication"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.jnu.student.Activity.PhotoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jnu.student.Activity.HelpActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jnu.student.Activity.SetDungeonActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jnu.student.Activity.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jnu.student.Activity.addRewardActivity"
+            android:exported="false" />
+        <activity
             android:name="com.jnu.student.Activity.addDungeonActivity"
             android:exported="false" />
         <activity

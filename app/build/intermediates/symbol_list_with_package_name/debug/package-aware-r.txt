@@ -2701,6 +2701,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add
+drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_checkbox_checked_mtrl
@@ -2805,6 +2806,7 @@ drawable notify_panel_notification_icon_bg
 drawable reward
 drawable statistics
 drawable tasks
+drawable teamilk
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2879,6 +2881,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_reward_button_cancel
+id add_reward_button_ok
+id add_reward_title
+id add_reward_titleEditText
 id add_tasks_details_Button_Daily
 id add_tasks_details_Button_Regular
 id add_tasks_details_Button_Weekly
@@ -2904,6 +2910,9 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id avatarImageView
+id balanceTextView
+id balanceTitleTextView
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2916,7 +2925,6 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id btn_msg
 id butto_Cancel
 id button3
 id buttonPanel
@@ -2924,6 +2932,7 @@ id button_Layout
 id button_OK
 id button_view_pager
 id button_zero
+id buyTeaTextView
 id cache_measures
 id callMeasure
 id cancel_button
@@ -2937,6 +2946,7 @@ id chain
 id chain2
 id chains
 id checkBox
+id checkUpdateTextView
 id checkbox
 id checked
 id chronometer
@@ -2947,6 +2957,7 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id commentNotificationCheckBox
 id compress
 id confirm_button
 id constraint
@@ -2992,6 +3003,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id dungeonReminderCheckBox
 id easeIn
 id easeInOut
 id easeOut
@@ -3035,7 +3047,11 @@ id group_divider
 id grouping
 id groups
 id header_title
+id helpTextView
+id help_web_view
 id hideable
+id historyListView
+id historyTitleTextView
 id home
 id homeAsUp
 id honorRequest
@@ -3046,6 +3062,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id indeterminate
@@ -3066,6 +3083,7 @@ id line3
 id linear
 id listMode
 id list_item
+id logoutTextView
 id m3_side_sheet
 id marquee
 id masked
@@ -3177,11 +3195,15 @@ id radio_Junior
 id radio_Senior
 id ratio
 id rectangles
-id recycl_dungeon
-id recycl_general
 id recycle_daily
+id recycle_reward
 id recyclerview_main
 id reverseSawtooth
+id reward_score_edit_text
+id reward_score_text
+id reward_tagsEditText
+id reward_tagsLabel_TextView
+id rewardtextView
 id right
 id rightToLeft
 id right_icon
@@ -3227,6 +3249,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settingsTextView
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3255,6 +3278,7 @@ id src_in
 id src_over
 id standard
 id start
+id startDungeonButton
 id startHorizontal
 id startToEnd
 id startVertical
@@ -3280,6 +3304,7 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id tasks_msg
 id text
 id text2
 id textEnd
@@ -3290,6 +3315,8 @@ id textTop
 id textView
 id textView2
 id textView3
+id textView4
+id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3322,6 +3349,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userInfoLayout
+id usernameTextView
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3331,9 +3360,12 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id walletTextView
 id west
 id withText
 id with_icon
+id withdrawAmountEditText
+id withdrawButton
 id withinBounds
 id wrap
 id wrap_content
@@ -3447,8 +3479,13 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_dungeon
+layout activity_add_reward
 layout activity_bottom_navegation
+layout activity_help
 layout activity_main
+layout activity_photo
+layout activity_set_dungeon
+layout activity_wallet
 layout add_tasks_details
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3468,9 +3505,9 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout empty_tasks
 layout fragment_daily_tasks
-layout fragment_dungeon_tasks
 layout fragment_finish_tasks
-layout fragment_general_tasks
+layout fragment_home
+layout fragment_reward_tasks
 layout fragment_score
 layout fragment_tab_tasks
 layout fragment_tasks_list
@@ -3708,6 +3745,7 @@ string side_sheet_behavior
 string statistics
 string status_bar_notification_info_overflow
 string tags
+string tao
 string tasks
 string title
 string to_zero

@@ -81,28 +81,6 @@ public class AddTasksActivity extends AppCompatActivity {
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 创建一个新的Intent对象
-                Intent intent = new Intent();
-
-                // 在当前布局中找到ID为add_tasks_details_edit_Title的EditText控件
-                EditText editTasksTitle = findViewById(R.id.add_tasks_details_edit_Title);
-
-                // 将EditText中的文本内容作为"title"键对应的值放入Intent中
-                intent.putExtra("title", editTasksTitle.getText().toString());
-
-                //得分
-                EditText editScoreTitle = findViewById(R.id.add_tasks_details_edit_Score);
-                intent.putExtra("score", editScoreTitle.getText().toString());
-
-                //标签
-                EditText editTagsTitle = findViewById(R.id.add_tasks_details_edit_Tags);
-                intent.putExtra("tags", editTagsTitle.getText().toString());
-
-                //任务类型
-                intent.putExtra("task_type", task_Type);
-
-                // 设置返回结果为RESULT_OK，并将带有数据的Intent传递回前一个Activity
-                setResult(Activity.RESULT_OK, intent);
                 // 结束当前的BookDetailsActivity，并返回到前一个Activity
                 AddTasksActivity.this.finish();
             }

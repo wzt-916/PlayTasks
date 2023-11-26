@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-49:12
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:2:1-64:12
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\86178\.gradle\caches\transforms-3\7cf34d8e30118dcad52be2898a79d0fd\transformed\material-1.8.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\86178\.gradle\caches\transforms-3\5acf9a84f6874f66961cd7fc314b86a2\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\86178\.gradle\caches\transforms-3\04a0f34cf908c682d73fc22f94c08cc8\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -76,8 +76,8 @@ ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidMa
 	android:name
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:10:22-72
 application
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:13:5-47:19
-INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:13:5-47:19
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:13:5-62:19
+INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:13:5-62:19
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\86178\.gradle\caches\transforms-3\7cf34d8e30118dcad52be2898a79d0fd\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.8.0] C:\Users\86178\.gradle\caches\transforms-3\7cf34d8e30118dcad52be2898a79d0fd\transformed\material-1.8.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\86178\.gradle\caches\transforms-3\5acf9a84f6874f66961cd7fc314b86a2\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -116,46 +116,76 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\86
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:15:9-65
 	android:usesCleartextTraffic
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:22:9-44
-activity#com.jnu.student.Activity.addDungeonActivity
+activity#com.jnu.student.Activity.PhotoActivity
 ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:24:9-26:40
 	android:exported
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:25:13-56
-activity#com.jnu.student.Activity.AddTasksActivity
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:25:13-51
+activity#com.jnu.student.Activity.HelpActivity
 ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:27:9-29:40
 	android:exported
 		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:29:13-37
 	android:name
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:28:13-54
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:28:13-50
+activity#com.jnu.student.Activity.SetDungeonActivity
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:30:9-32:40
+	android:exported
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:31:13-56
+activity#com.jnu.student.Activity.WalletActivity
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:33:9-35:40
+	android:exported
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:34:13-52
+activity#com.jnu.student.Activity.addRewardActivity
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:37:13-55
+activity#com.jnu.student.Activity.addDungeonActivity
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:39:9-41:40
+	android:exported
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:40:13-56
+activity#com.jnu.student.Activity.AddTasksActivity
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:42:9-44:40
+	android:exported
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:44:13-37
+	android:name
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:43:13-54
 activity#com.jnu.student.Activity.MainActivity
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:30:9-38:20
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:45:9-53:20
 	android:exported
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:32:13-36
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:47:13-36
 	android:name
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:31:13-50
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:46:13-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:33:13-37:29
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:48:13-52:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:34:17-69
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:49:17-69
 	android:name
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:34:25-66
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:49:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:36:17-77
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:36:27-74
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:51:27-74
 meta-data#TencentMapSDK
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:40:9-42:67
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:55:9-57:67
 	android:value
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:42:13-64
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:57:13-64
 	android:name
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:41:13-41
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:56:13-41
 activity#com.jnu.student.BookDetailsActivity
-ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:44:9-46:40
+ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:59:9-61:40
 	android:exported
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:46:13-37
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:61:13-37
 	android:name
-		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:45:13-48
+		ADDED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml:60:13-48
 uses-sdk
 INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\86178\AndroidStudioProjects\PlayTasks\app\src\main\AndroidManifest.xml
