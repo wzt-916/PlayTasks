@@ -104,7 +104,7 @@ public class DailyTasksFragment extends Fragment {
                 builder2.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getContext(), "确定按钮被点击", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "确定按钮被点击", Toast.LENGTH_SHORT).show();
                         daily_tasks.remove(item.getOrder());
                         tasksAdapter.notifyItemRemoved(item.getOrder());
                         new DataDailyTasks().SaveTasks(DailyTasksFragment.this.getContext(),daily_tasks);
@@ -161,7 +161,7 @@ public class DailyTasksFragment extends Fragment {
                             finish_task.add(new Tasks(textViewTitle.getText().toString(),daily_score));
                             new DataFinishTasks().SaveTasks(getContext(),finish_task);
                             // CheckBox 被选中时的逻辑
-                            Toast.makeText(getContext(), daily_score+"", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getContext(), daily_score+"", Toast.LENGTH_SHORT).show();
                             buttonView.setChecked(false);
                             if (getActivity() != null) {
                                 Bundle bundle = new Bundle();

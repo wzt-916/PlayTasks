@@ -21,15 +21,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.jnu.student.Fragment.ButtonTasksFragment;
 import com.jnu.student.Fragment.DailyTasksFragment;
+import com.jnu.student.Fragment.DungeonTasksFragment;
 import com.jnu.student.Fragment.HomeFragment;
 import com.jnu.student.Fragment.RewardFragment;
 import com.jnu.student.R;
 import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataDungeon;
 import com.jnu.student.data.DataFinishTasks;
 import com.jnu.student.data.DataGeneralTasks;
 import com.jnu.student.data.DataRewardTasks;
 import com.jnu.student.data.DataScore;
 import com.jnu.student.data.DataWeeklyTasks;
+import com.jnu.student.data.Dungeon;
 import com.jnu.student.data.Tasks;
 
 import java.util.ArrayList;
@@ -118,7 +121,22 @@ public class MainActivity extends AppCompatActivity {
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     if(result.getResultCode() == Activity.RESULT_OK){
-
+                        Intent data = result.getData();
+                        String selected = data.getStringExtra("selectedText");
+                        if("初级".equals(selected)) //初级
+                        {
+                            ArrayList<Dungeon> dungeon_tasks = new DataDungeon().LoadTasks(this);
+                            dungeon_tasks.add(new Dungeon("初级",R.drawable.run));
+                            new DataDungeon().SaveTasks(this,dungeon_tasks);
+                            loadTasksFragment(new DungeonTasksFragment());
+                        }
+                        else if("高级".equals(selected))
+                        {
+                            ArrayList<Dungeon> dungeon_tasks = new DataDungeon().LoadTasks(this);
+                            dungeon_tasks.add(new Dungeon("高级",R.drawable.jida));
+                            new DataDungeon().SaveTasks(this,dungeon_tasks);
+                            loadTasksFragment(new DungeonTasksFragment());
+                        }
                     } else if (result.getResultCode() == Activity.RESULT_CANCELED) {
 
                     }
@@ -230,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
                         // 创建一个新的意图（Intent）以启动 AddTasksActivity
                         Intent intent2 = new Intent(this, addDungeonActivity.class);
                         // 使用 addTasksLauncher 启动指定的 Intent
-                        addTasksLauncher.launch(intent2);
+                        addDungeonLauncher.launch(intent2);
                         return true;
                     case "排序":
                         // 处理选项三点击事件
@@ -284,6 +302,12 @@ public class MainActivity extends AppCompatActivity {
                             new DataGeneralTasks().SaveTasks(this, general_tasks);
                             loadTasksFragment(new ButtonTasksFragment(2));
                         }
+                        if(tabposition == 3)
+                        {
+                            ArrayList<Dungeon> dungeon_tasks = new ArrayList<>();
+                            new DataDungeon().SaveTasks(this, dungeon_tasks);
+                            loadTasksFragment(new ButtonTasksFragment(3));
+                        }
                         if(tabposition == 4)
                         {
                             ArrayList<Tasks> finish_tasks = new ArrayList<>();
@@ -291,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
                             loadTasksFragment(new ButtonTasksFragment(4));
                         }
 
-                        Toast.makeText(this, "排序成功"+new ButtonTasksFragment().defaultTab, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(this, "排序成功"+new ButtonTasksFragment().defaultTab, Toast.LENGTH_SHORT).show();
                         return true;
                 }
                 return false;

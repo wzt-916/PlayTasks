@@ -12,7 +12,9 @@ drawable avatar
 drawable home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable jida
 drawable reward
+drawable run
 drawable statistics
 drawable tasks
 drawable teamilk
@@ -33,10 +35,8 @@ id avatarImageView
 id balanceTextView
 id balanceTitleTextView
 id bottom_navigation_menu
-id butto_Cancel
 id button3
 id button_Layout
-id button_OK
 id button_view_pager
 id button_zero
 id buyTeaTextView
@@ -44,6 +44,8 @@ id checkBox
 id checkUpdateTextView
 id commentNotificationCheckBox
 id dungeonReminderCheckBox
+id dungeon_button_OK
+id dungeon_button_cancel
 id empty_textView1
 id empty_textView2
 id fragment_container
@@ -52,6 +54,7 @@ id help_web_view
 id historyListView
 id historyTitleTextView
 id imageView
+id image_view_book_cover
 id logoutTextView
 id navigation_home
 id navigation_reward
@@ -79,6 +82,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id text_view_book_title
 id text_view_score
 id text_view_tasks_title
 id userInfoLayout
@@ -88,13 +92,16 @@ id withdrawAmountEditText
 id withdrawButton
 layout activity_add_dungeon
 layout activity_add_reward
+layout activity_advanced_main
 layout activity_bottom_navegation
 layout activity_help
 layout activity_main
 layout activity_photo
+layout activity_primary_main
 layout activity_set_dungeon
 layout activity_wallet
 layout add_tasks_details
+layout dungeon_detail
 layout empty_tasks
 layout fragment_daily_tasks
 layout fragment_finish_tasks

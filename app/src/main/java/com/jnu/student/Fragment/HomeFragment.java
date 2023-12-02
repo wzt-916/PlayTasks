@@ -1,5 +1,7 @@
 package com.jnu.student.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,7 +16,6 @@ import com.jnu.student.Activity.HelpActivity;
 import com.jnu.student.Activity.PhotoActivity;
 import com.jnu.student.Activity.SetDungeonActivity;
 import com.jnu.student.Activity.WalletActivity;
-import com.jnu.student.Activity.addRewardActivity;
 import com.jnu.student.R;
 
 public class HomeFragment extends Fragment {
@@ -86,6 +87,34 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PhotoActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // 找到布局中的视图组件(更新)
+        TextView update = rootView.findViewById(R.id.checkUpdateTextView);
+        // 设置点击事件监听器
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 创建AlertDialog.Builder对象
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                // 设置对话框标题和内容
+                builder.setTitle("检查更新");
+                builder.setMessage("已经是最新版本。");
+
+                // 添加确定按钮
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 这里可以添加确定按钮点击后的操作
+                        dialog.dismiss(); // 关闭对话框
+                    }
+                });
+
+                // 创建并显示AlertDialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
 

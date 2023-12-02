@@ -2731,6 +2731,7 @@ int drawable ic_mtrl_chip_checked_black 0x7f070092
 int drawable ic_mtrl_chip_checked_circle 0x7f070093
 int drawable ic_mtrl_chip_close_circle 0x7f070094
 int drawable ic_search_black_24 0x7f070095
+int drawable jida 0x7f0700e7
 int drawable m3_appbar_background 0x7f070096
 int drawable m3_avd_hide_password 0x7f070097
 int drawable m3_avd_show_password 0x7f070098
@@ -2803,6 +2804,7 @@ int drawable notification_template_icon_low_bg 0x7f0700da
 int drawable notification_tile_bg 0x7f0700db
 int drawable notify_panel_notification_icon_bg 0x7f0700dc
 int drawable reward 0x7f0700dd
+int drawable run 0x7f0700e6
 int drawable statistics 0x7f0700e2
 int drawable tasks 0x7f0700de
 int drawable teamilk 0x7f0700e5
@@ -2924,11 +2926,9 @@ int id bounce 0x7f08005f
 int id bounceBoth 0x7f080060
 int id bounceEnd 0x7f080061
 int id bounceStart 0x7f080062
-int id butto_Cancel 0x7f080209
 int id button3 0x7f080224
 int id buttonPanel 0x7f080063
 int id button_Layout 0x7f08020a
-int id button_OK 0x7f08020b
 int id button_view_pager 0x7f080064
 int id button_zero 0x7f080226
 int id buyTeaTextView 0x7f08023c
@@ -3003,6 +3003,8 @@ int id dragStart 0x7f0800a6
 int id dragUp 0x7f0800a7
 int id dropdown_menu 0x7f0800a8
 int id dungeonReminderCheckBox 0x7f08024b
+int id dungeon_button_OK 0x7f08024f
+int id dungeon_button_cancel 0x7f080250
 int id easeIn 0x7f0800a9
 int id easeInOut 0x7f0800aa
 int id easeOut 0x7f0800ab
@@ -3062,6 +3064,7 @@ int id ignore 0x7f0800da
 int id ignoreRequest 0x7f0800db
 int id image 0x7f0800dc
 int id imageView 0x7f08024e
+int id image_view_book_cover 0x7f080251
 int id immediateStop 0x7f0800dd
 int id included 0x7f0800de
 int id indeterminate 0x7f0800df
@@ -3319,6 +3322,7 @@ int id textView5 0x7f08022f
 int id text_input_end_icon 0x7f0801c4
 int id text_input_error_icon 0x7f0801c5
 int id text_input_start_icon 0x7f0801c6
+int id text_view_book_title 0x7f080252
 int id text_view_score 0x7f0801f8
 int id text_view_tasks_title 0x7f0801f9
 int id textinput_counter 0x7f0801c7
@@ -3479,10 +3483,12 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_add_dungeon 0x7f0b0074
 int layout activity_add_reward 0x7f0b007a
+int layout activity_advanced_main 0x7f0b0083
 int layout activity_bottom_navegation 0x7f0b001c
 int layout activity_help 0x7f0b007e
 int layout activity_main 0x7f0b001d
 int layout activity_photo 0x7f0b007f
+int layout activity_primary_main 0x7f0b0082
 int layout activity_set_dungeon 0x7f0b007d
 int layout activity_wallet 0x7f0b007c
 int layout add_tasks_details 0x7f0b0072
@@ -3502,6 +3508,7 @@ int layout design_navigation_menu 0x7f0b002a
 int layout design_navigation_menu_item 0x7f0b002b
 int layout design_text_input_end_icon 0x7f0b002c
 int layout design_text_input_start_icon 0x7f0b002d
+int layout dungeon_detail 0x7f0b0081
 int layout empty_tasks 0x7f0b0078
 int layout fragment_daily_tasks 0x7f0b002f
 int layout fragment_finish_tasks 0x7f0b0077

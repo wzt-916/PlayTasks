@@ -37,6 +37,15 @@
         android:theme="@style/Theme.MyFirstApplication"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.jnu.student.Activity.advancedActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jnu.student.Activity.primaryMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jnu.student.Activity.UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name="com.jnu.student.Activity.PhotoActivity"
             android:exported="false" />
         <activity

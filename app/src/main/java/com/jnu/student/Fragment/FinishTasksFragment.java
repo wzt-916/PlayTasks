@@ -103,7 +103,7 @@ public class FinishTasksFragment extends Fragment {
                 builder2.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getContext(), "确定按钮被点击", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "确定按钮被点击", Toast.LENGTH_SHORT).show();
                         finish_tasks.remove(item.getOrder());
                         tasksAdapter.notifyItemRemoved(item.getOrder());
                         new DataFinishTasks().SaveTasks(FinishTasksFragment.this.getContext(),finish_tasks);

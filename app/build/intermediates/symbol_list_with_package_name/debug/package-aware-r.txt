@@ -2732,6 +2732,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable jida
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -2804,6 +2805,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable reward
+drawable run
 drawable statistics
 drawable tasks
 drawable teamilk
@@ -2925,11 +2927,9 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id butto_Cancel
 id button3
 id buttonPanel
 id button_Layout
-id button_OK
 id button_view_pager
 id button_zero
 id buyTeaTextView
@@ -3004,6 +3004,8 @@ id dragStart
 id dragUp
 id dropdown_menu
 id dungeonReminderCheckBox
+id dungeon_button_OK
+id dungeon_button_cancel
 id easeIn
 id easeInOut
 id easeOut
@@ -3063,6 +3065,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id image_view_book_cover
 id immediateStop
 id included
 id indeterminate
@@ -3320,6 +3323,7 @@ id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_view_book_title
 id text_view_score
 id text_view_tasks_title
 id textinput_counter
@@ -3480,10 +3484,12 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_dungeon
 layout activity_add_reward
+layout activity_advanced_main
 layout activity_bottom_navegation
 layout activity_help
 layout activity_main
 layout activity_photo
+layout activity_primary_main
 layout activity_set_dungeon
 layout activity_wallet
 layout add_tasks_details
@@ -3503,6 +3509,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dungeon_detail
 layout empty_tasks
 layout fragment_daily_tasks
 layout fragment_finish_tasks

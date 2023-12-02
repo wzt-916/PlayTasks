@@ -129,7 +129,7 @@ public class RewardFragment extends Fragment {
                 builder2.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getContext(), "确定按钮被点击", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "确定按钮被点击", Toast.LENGTH_SHORT).show();
                         reward_tasks.remove(item.getOrder());
                         tasksAdapter.notifyItemRemoved(item.getOrder());
                         new DataDailyTasks().SaveTasks(RewardFragment.this.getContext(), reward_tasks);
@@ -182,7 +182,7 @@ public class RewardFragment extends Fragment {
                             TextView scoreTextView = getTextViewScore();
                             tasks_score = Integer.parseInt(scoreTextView.getText().toString());
                             // CheckBox 被选中时的逻辑
-                            Toast.makeText(getContext(), tasks_score +"", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getContext(), tasks_score +"", Toast.LENGTH_SHORT).show();
                             buttonView.setChecked(false);
                             if (getActivity() != null) {
                                 Bundle bundle = new Bundle();

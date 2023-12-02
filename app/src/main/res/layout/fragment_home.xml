@@ -81,6 +81,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="检查更新"
+        android:clickable="true"
+        android:onClick="onUpdateClick"
         android:padding="16dp"
         android:textStyle="bold"
         android:layout_below="@id/helpTextView"/>
