@@ -79,8 +79,7 @@ public class DailyTasksFragment extends Fragment {
         return rootView;
     }
    public boolean onContextItemSelected(MenuItem item) {
-        if(item.getGroupId() != 0)
-        {
+        if(item.getGroupId() != 0) {
             return false;
         }
         switch (item.getItemId()) {

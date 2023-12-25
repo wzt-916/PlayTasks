@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.jnu.student.R;
 import com.jnu.student.data.DataDailyTasks;
+import com.jnu.student.data.DataRewardScore;
 import com.jnu.student.data.DataRewardTasks;
 import com.jnu.student.data.DataScore;
 import com.jnu.student.data.Tasks;
@@ -83,13 +84,16 @@ public class RewardFragment extends Fragment {
 
         getParentFragmentManager().setFragmentResultListener("updateScore", this, (requestKey, result) -> {
             score = new DataScore().loadScore(this.getContext());
+            int reward = new DataRewardScore().loadScore(this.getContext());
             int updatedScore = score;
             if (result.containsKey("rewardScore")) {
                 updatedScore += result.getInt("rewardScore");
+                reward += result.getInt("rewardScore");
             }
             // 更新 TextView 的显示
             textView.setText(String.valueOf(updatedScore));
             new DataScore().saveScore(this.getContext(),updatedScore);
+            new DataRewardScore().saveScore(this.getContext(),reward);
             if (getActivity() != null) {
                 int all_score = new DataScore().loadScore(this.getContext());
                 Bundle bundle = new Bundle();

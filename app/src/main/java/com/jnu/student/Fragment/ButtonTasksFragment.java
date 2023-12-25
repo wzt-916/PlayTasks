@@ -23,6 +23,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.jnu.student.R;
 
+import com.jnu.student.data.DataAllScore;
 import com.jnu.student.data.DataScore;
 
 
@@ -30,12 +31,14 @@ import java.util.ArrayList;
 
 public class ButtonTasksFragment extends Fragment {
     private static int score;
+    private static int allscore;
+    private static int rewardscore;
     public int defaultTab = 0;
     private Fragment daily_tasks =  new DailyTasksFragment();
     private Fragment weekly_tasks = new WeeklyTasksFragment();
     private Fragment general_tasks = new GeneralTasksFragment();
     private Fragment dungeon_tasks = new DungeonTasksFragment();
-    private String []tabHeaderStrings = {"每日任务","每周任务","普通任务","副本任务","已完成","成就点数"};
+    private String []tabHeaderStrings = {"每日任务","每周任务","普通任务","副本任务","成就点数"};
     public ButtonTasksFragment() {
         // Required empty public constructor
     }
@@ -70,19 +73,24 @@ public class ButtonTasksFragment extends Fragment {
 
         getParentFragmentManager().setFragmentResultListener("updateScore", this, (requestKey, result) -> {
             score = new DataScore().loadScore(this.getContext());
+            allscore = new DataAllScore().loadScore(this.getContext());
             int updatedScore = score;
             if (result.containsKey("dailyScore")) {
                 updatedScore += result.getInt("dailyScore");
+                allscore += result.getInt("dailyScore");
             }
             if (result.containsKey("weeklyScore")) {
                 updatedScore += result.getInt("weeklyScore");
+                allscore += result.getInt("weeklyScore");
             }
             if (result.containsKey("generalScore")) {
                 updatedScore += result.getInt("generalScore");
+                allscore += result.getInt("generalScore");
             }
             // 更新 TextView 的显示
             textView.setText(String.valueOf(updatedScore));
             new DataScore().saveScore(this.getContext(),updatedScore);
+            new DataAllScore().saveScore(this.getContext(),allscore);
             if (getActivity() != null) {
                 int all_score = new DataScore().loadScore(this.getContext());
                 Bundle bundle = new Bundle();
@@ -130,7 +138,7 @@ public class ButtonTasksFragment extends Fragment {
         return root;
     }
     public class FragmentAdapter extends FragmentStateAdapter {
-        private static final int NUM_TABS = 6;
+        private static final int NUM_TABS = 5;
         public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
             super(fragmentManager, lifecycle);
         }
@@ -149,8 +157,6 @@ public class ButtonTasksFragment extends Fragment {
                 case 3:
                     return new DungeonTasksFragment();
                 case 4:
-                    return new FinishTasksFragment();
-                case 5:
                     return new ScoreFragment();
                 default:
                     return null;

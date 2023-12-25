@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <!-- 用户名和头像 -->
     <LinearLayout
@@ -9,9 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
-        android:clickable="true"
-        android:onClick="onUserInfoClick">
+        android:gravity="center_vertical">
 
         <ImageView
             android:id="@+id/avatarImageView"
@@ -29,75 +30,163 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray" />
+
     <!-- 我的钱包 -->
-    <TextView
-        android:id="@+id/walletTextView"
+    <LinearLayout
+        android:id="@+id/walletLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我的钱包"
-        android:padding="16dp"
-        android:clickable="true"
-        android:onClick="onWalletClick"
-        android:textStyle="bold"
-        android:layout_below="@id/userInfoLayout"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/wallet_icon"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/walletTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的钱包"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <!-- 副本设置 -->
-    <TextView
-        android:id="@+id/settingsTextView"
+    <LinearLayout
+        android:id="@+id/settingsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="副本设置"
-        android:padding="16dp"
-        android:clickable="true"
-        android:onClick="onSettingsClick"
-        android:textStyle="bold"
-        android:layout_below="@id/walletTextView"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/settings_icon"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/settingsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="副本设置"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <!-- 退出登录 -->
-    <TextView
-        android:id="@+id/logoutTextView"
+    <LinearLayout
+        android:id="@+id/logoutLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="退出登录"
-        android:padding="16dp"
-        android:textStyle="bold"
-        android:layout_below="@id/settingsTextView"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/logout_icon"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/logoutTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出登录"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <!-- 帮助 -->
-    <TextView
-        android:id="@+id/helpTextView"
+    <LinearLayout
+        android:id="@+id/helpLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="帮助"
-        android:padding="16dp"
-        android:clickable="true"
-        android:onClick="onHelpClick"
-        android:textStyle="bold"
-        android:layout_below="@id/logoutTextView"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/help_icon"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/helpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="帮助"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <!-- 检查更新 -->
-    <TextView
-        android:id="@+id/checkUpdateTextView"
+    <LinearLayout
+        android:id="@+id/checkUpdateLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="检查更新"
-        android:clickable="true"
-        android:onClick="onUpdateClick"
-        android:padding="16dp"
-        android:textStyle="bold"
-        android:layout_below="@id/helpTextView"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/update_icon"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/checkUpdateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="检查更新"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <!-- 请作者喝奶茶 -->
-    <TextView
-        android:id="@+id/buyTeaTextView"
+    <LinearLayout
+        android:id="@+id/buyTeaLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="请啊涛喝奶茶"
-        android:padding="16dp"
-        android:clickable="true"
-        android:onClick="onBuyTeaClick"
-        android:textStyle="bold"
-        android:layout_below="@id/checkUpdateTextView"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
 
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/tea_icon"
+            android:layout_marginEnd="16dp"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/buyTeaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请啊涛喝奶茶"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>

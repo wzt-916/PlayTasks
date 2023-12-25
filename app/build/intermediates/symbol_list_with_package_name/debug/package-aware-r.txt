@@ -2717,6 +2717,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable help_icon
 drawable home
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -2733,6 +2734,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable jida
+drawable logout_icon
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -2806,12 +2808,16 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable reward
 drawable run
+drawable settings_icon
 drawable statistics
 drawable tasks
+drawable tea_icon
 drawable teamilk
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable update_icon
+drawable wallet_icon
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2932,6 +2938,7 @@ id buttonPanel
 id button_Layout
 id button_view_pager
 id button_zero
+id buyTeaLayout
 id buyTeaTextView
 id cache_measures
 id callMeasure
@@ -2946,6 +2953,7 @@ id chain
 id chain2
 id chains
 id checkBox
+id checkUpdateLayout
 id checkUpdateTextView
 id checkbox
 id checked
@@ -3049,6 +3057,7 @@ id group_divider
 id grouping
 id groups
 id header_title
+id helpLayout
 id helpTextView
 id help_web_view
 id hideable
@@ -3086,6 +3095,7 @@ id line3
 id linear
 id listMode
 id list_item
+id logoutLayout
 id logoutTextView
 id m3_side_sheet
 id marquee
@@ -3252,6 +3262,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settingsLayout
 id settingsTextView
 id sharedValueSet
 id sharedValueUnset
@@ -3364,6 +3375,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id walletLayout
 id walletTextView
 id west
 id withText
